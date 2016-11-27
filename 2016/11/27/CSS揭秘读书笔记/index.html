@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>♥毛球JoseyDon♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球JoseyDon♥的博客">
+	<img src="/favicon.png" alt="♥毛球JoseyDon♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+	<div class='post-body mb'>
+		<h1 id="CSS揭秘读书笔记"><a href="#CSS揭秘读书笔记" class="headerlink" title="CSS揭秘读书笔记"></a>CSS揭秘读书笔记</h1><p>阅读时间：2016.11.21-</p>
+<p>在写css揭秘笔记时，同时参考了</p>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000005042700#articleHeader2" target="_blank" rel="external">css编码技巧【css揭秘读书笔记】</a></li>
+</ul>
+<h2 id="css编码技巧"><a href="#css编码技巧" class="headerlink" title="css编码技巧"></a>css编码技巧</h2><p>在实践中，代码可维护性的最大要素是<strong>尽量减少改动时要编辑的地方。</strong><br>举例说明</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">padding</span><span class="selector-pseudo">:6px</span> 12<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-id">#446d88</span>;</div><div class="line"><span class="selector-tag">background</span>: <span class="selector-id">#58a</span> <span class="selector-tag">linear-gradient</span>(<span class="selector-id">#77a0bb</span>, <span class="selector-id">#58a</span>);</div><div class="line"><span class="selector-tag">border-radius</span>: 4<span class="selector-tag">px</span>;</div><div class="line"><span class="selector-tag">box-shadow</span>: 0 1<span class="selector-tag">px</span> 5<span class="selector-tag">px</span> <span class="selector-tag">gray</span>;</div><div class="line"><span class="selector-tag">color</span>: <span class="selector-tag">white</span>;</div><div class="line"><span class="selector-tag">text-shadow</span><span class="selector-pseudo">:0</span> <span class="selector-tag">-1px</span> 1<span class="selector-tag">px</span> <span class="selector-id">#335166</span>;</div><div class="line"><span class="selector-tag">font-size</span><span class="selector-pseudo">:20px</span>;</div><div class="line"><span class="selector-tag">line-height</span><span class="selector-pseudo">:30px</span>;</div></pre></td></tr></table></figure>
+<p>以上的代码有什么问题呢？<br>1.如果需要改变字号，那么同时需要调整行高。<strong>当某些值相互依赖时，应该把它们的相互关系用代码表达出来。</strong></p>
+<p>2.如果将父级的字号加大，则不得不修改每一处使用绝对值作为字体尺寸的样式。<br>需要确定哪些效果是应该跟着变大变小，哪些效果是保持不变的。</p>
+<p>3.产生主色调的亮色和暗色变体，其实可以使用将半透明的黑色或白色叠加在主色调上。<br>background: #58a linear-gradient(hsla(0,0%,100%,.2),transparent);<br><em>作者建议使用HSLA而不是RGBA来产生半透明的白色。因为它的字符长度更短，重复率更低。</em><br>那么经过修改后的代码如下：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">padding</span>: <span class="selector-class">.3em</span> <span class="selector-class">.8em</span>;</div><div class="line"><span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-tag">rgba</span>(0,0,0,<span class="selector-class">.1</span>);</div><div class="line"><span class="selector-tag">background</span>: <span class="selector-id">#58a</span> <span class="selector-tag">linear-gradient</span>(<span class="selector-tag">hsla</span>(0,0%,100%,<span class="selector-class">.2</span>),<span class="selector-tag">transparent</span>);</div><div class="line"><span class="selector-tag">border-radius</span>: <span class="selector-class">.2em</span></div><div class="line"><span class="selector-tag">box-shadow</span>: 0 <span class="selector-class">.05em</span> <span class="selector-class">.25em</span> <span class="selector-tag">rgba</span>(0,0,0,<span class="selector-class">.5</span>);</div><div class="line"><span class="selector-tag">color</span>: <span class="selector-tag">white</span>;</div><div class="line"><span class="selector-tag">text-shadow</span>: 0 <span class="selector-tag">-</span><span class="selector-class">.05em</span> <span class="selector-class">.05em</span> <span class="selector-tag">rgba</span>(0,0,0,<span class="selector-class">.5</span>);</div><div class="line"><span class="selector-tag">font-size</span>: 125%;</div><div class="line"><span class="selector-tag">line-height</span><span class="selector-pseudo">:1.5</span></div></pre></td></tr></table></figure>
+<p>关于使用rem还是em还是百分比，需要根据具体情况来决定。</p>
+<p>em使用说明参考：<a href=""></a></p>
+<p>rem使用说明参考：<a href=""></a><br>【插播笔试题】<br>Q：line-height:1.5 与line-height:150%的差别？<br>line-height:1.5 是根据自身元素的font-size进行计算。<br>line-height:150% 是根据父元素继承而来的font-size进行计算。<br>Q：rem,em,px的差别<br>rem css3新增单位。rem为元素设定字体大小时，相对的只是HTML根元素。【IE8以下不支持】<br>em 相对于父元素的字体大小。<br>px 像素px是相对于显示器屏幕分辨率而言的。<br><a href="http://pxtoem.com/" target="_blank" rel="external">px，em，rem的转换工具</a></p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2016-11-27T03:43:42.002Z" itemprop="datePublished">2016-11-27</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="CSS揭秘读书笔记" data-title="" data-url="http://yoursite.com/2016/11/27/CSS揭秘读书笔记/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://gss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/d31b0ef41bd5ad6e9546d4d688cb39dbb6fd3c4a.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球JoseyDon♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
