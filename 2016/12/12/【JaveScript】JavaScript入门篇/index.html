@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>JavaScript入门篇 | ♥毛球JoseyDon♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球JoseyDon♥的博客">
+	<img src="/favicon.png" alt="♥毛球JoseyDon♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      JavaScript入门篇
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>学习时间：2016.12.09</p>
+<p>参考资料：<a href="http://www.imooc.com/learn/36" target="_blank" rel="external">http://www.imooc.com/learn/36</a></p>
+<h3 id="一、引入JS文件"><a href="#一、引入JS文件" class="headerlink" title="一、引入JS文件"></a>一、引入JS文件</h3><p><img src="http://img.mukewang.com/52a6ad240001086506440600.jpg" alt=""></p>
+<h3 id="二、语句与符号"><a href="#二、语句与符号" class="headerlink" title="二、语句与符号"></a>二、语句与符号</h3><p><strong>每一句JavaScript代码格式:</strong><code>语句;</code></p>
+<p>先来看看下面代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">   alert(&quot;hello!&quot;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>例子中的<code>alert(&quot;hello!&quot;);</code>就是一个JavaScript语句。</p>
+<p>一行的结束就被认定为语句的结束，通常在结尾加上一个分号<code>&quot;;&quot;</code>来表示语句的结束。</p>
+<p>看看下面这段代码,有三条语句，每句结束后都有”;”，按顺序执行语句。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">   document.write(&quot;I&quot;);</div><div class="line">   document.write(&quot;love&quot;);</div><div class="line">   document.write(&quot;JavaScript&quot;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p><em>学习到的语句</em></p>
+<p><em>弹窗：alert()</em></p>
+<p><em>document.write()</em></p>
+<h3 id="三、变量"><a href="#三、变量" class="headerlink" title="三、变量"></a>三、变量</h3><p><img src="http://img.mukewang.com/52e32dc90001140c04120228.jpg" alt=""></p>
+<p><strong>定义变量使用关键字var,语法如下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var 变量名</div></pre></td></tr></table></figure>
+<p><strong>变量名可以任意取名，但要遵循命名规则:</strong></p>
+<pre><code>1.变量必须使用字母、下划线(_)或者美元符($)开始。
+
+2.然后可以使用任意多个英文字母、数字、下划线(_)或者美元符($)组成。
+
+3.不能使用JavaScript关键词与JavaScript保留字。
+</code></pre><p><strong>变量要先声明再赋值，如下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var mychar;</div><div class="line">mychar=&quot;javascript&quot;;</div><div class="line">var mynum = 6;</div></pre></td></tr></table></figure>
+<p><strong>变量可以重复赋值，如下：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var mychar;</div><div class="line">mychar=&quot;javascript&quot;;</div><div class="line">mychar=&quot;hello&quot;;</div></pre></td></tr></table></figure>
+<p><strong>注意:</strong></p>
+<ol>
+<li>在JS中区分大小写，如变量mychar与myChar是不一样的，表示是两个变量。</li>
+<li>变量虽然也可以不声明，直接使用，但不规范，需要先声明，后使用。</li>
+</ol>
+<h3 id="四、判断语句（if…else）"><a href="#四、判断语句（if…else）" class="headerlink" title="四、判断语句（if…else）"></a>四、判断语句（if…else）</h3><p>if…else语句是在指定的条件成立时执行代码，在条件不成立时执行else后的代码。</p>
+<p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if(条件)</div><div class="line">&#123; 条件成立时执行的代码 &#125;</div><div class="line">else</div><div class="line">&#123; 条件不成立时执行的代码 &#125;</div></pre></td></tr></table></figure>
+<h3 id="五、函数"><a href="#五、函数" class="headerlink" title="五、函数"></a>五、函数</h3><p>函数是完成某个特定功能的一组语句。如没有函数，完成任务可能需要五行、十行、甚至更多的代码。这时我们就可以把完成特定功能的代码块放到一个函数里，直接调用这个函数，就省重复输入大量代码的麻烦。</p>
+<p><strong>定义函数的基本语法:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function 函数名()</div><div class="line">&#123;</div><div class="line">     函数代码;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>创建一个提交按钮来调用函数 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"按钮里显示的内容 onclick="</span> 函数名()" /&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="六、常用语句"><a href="#六、常用语句" class="headerlink" title="六、常用语句"></a>六、常用语句</h3><p>1.输出内容：document.write</p>
+<p>2.alert消息对话框：alert(字符串或变量)</p>
+<p>3.confirm消息对话框：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 变量名=confirm(字符串或变量);</div><div class="line"><span class="keyword">if</span>(变量名==<span class="literal">true</span>)</div><div class="line">&#123;&#125;;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;&#125;;</div></pre></td></tr></table></figure>
+<p>4.prompt消息对话框：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 变量名=prompt(显示在对话框中的文本，不可修改;文本框中的内容，可修改);</div><div class="line"><span class="keyword">if</span>(判断条件)</div><div class="line">&#123;&#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">&#123;&#125;</div></pre></td></tr></table></figure>
+<p>5.打开新窗口</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.open(<span class="string">'新页面地址'</span>,<span class="string">'在哪个窗口打开'</span>,<span class="string">'参数字符串'</span>);</div></pre></td></tr></table></figure>
+<p>_blank：在新窗口显示目标网页</p>
+<p>_self：在当前窗口显示目标网页</p>
+<p>_top：框架网页中在上部窗口中显示目标网页</p>
+<p>参数表如下：</p>
+<p><img src="http://img.mukewang.com/52e3677900013d6a05020261.jpg" alt=""></p>
+<p>6.关闭窗口</p>
+<p>（1）当没有把打开的窗口对象储存在变量里时</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">window</span>.close();</div></pre></td></tr></table></figure>
+<p>（2）当把打开的窗口对象储存在变量里时</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 变量名=<span class="built_in">window</span>.open(); <span class="comment">//将新打的窗口对象，存储在变量中</span></div><div class="line">    变量名.close();</div></pre></td></tr></table></figure>
+<h3 id="七、DOM操作"><a href="#七、DOM操作" class="headerlink" title="七、DOM操作"></a>七、DOM操作</h3><h4 id="1-认识DOM"><a href="#1-认识DOM" class="headerlink" title="1.认识DOM"></a>1.<u>认识DOM</u></h4><p>文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法。DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）。</p>
+<p><img src="http://img.mukewang.com/52e4bd0f0001dd8d04830279.jpg" alt=""></p>
+<p>HTML文档可以说由节点构成的集合，三种常见的DOM节点:</p>
+<ol>
+<li><p>元素节点：上图中<html>、<body>、<p>等都是元素节点，即标签。</p>
+</body></html></p></li>
+<li><p>文本节点:向用户展示的内容，如<li>…</li>中的JavaScript、DOM、CSS等文本。</p>
+</li>
+<li><p>属性节点:元素属性，如<a>标签的链接属性href=”   “。</a></p>
+<p><img src="http://img.mukewang.com/52e4bdb80001064c04480196.jpg" alt=""></p>
+</li>
+</ol>
+<h4 id="2-通过ID获取元素"><a href="#2-通过ID获取元素" class="headerlink" title="2.通过ID获取元素"></a>2.<u>通过ID获取元素</u></h4><p>语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"id名"</span>)</div></pre></td></tr></table></figure>
+<p>获取的元素是一个对象，如果想对元素进行操作，我们要通过它的属性或者方法。</p>
+<p>通过这个方式可以得到id名为指定的<strong>标签</strong>。</p>
+<h4 id="3-innerHTML属性"><a href="#3-innerHTML属性" class="headerlink" title="3.innerHTML属性"></a>3.<u>innerHTML属性</u></h4><p>语法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span><span class="comment">/*对象名*/</span>.innerHTML</div></pre></td></tr></table></figure>
+<p>实例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h2</span> <span class="attr">id</span>=<span class="string">"con"</span>&gt;</span>JavaScript<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mychar=<span class="built_in">document</span>.getElementIdBy(<span class="string">"con"</span>);<span class="comment">//获取这个元素</span></div><div class="line"><span class="built_in">document</span>.write(<span class="string">"变化前"</span>+mychar.innerHTML);<span class="comment">//输出这个元素里面的内容</span></div><div class="line">mychar.innerHTML=<span class="string">"HelloWorld"</span>;<span class="comment">//改变这个元素里面的内容</span></div><div class="line"><span class="built_in">document</span>.write(<span class="string">"变化后"</span>+mychar.innerHTML);<span class="comment">//输出这个元素里面的内容</span></div></pre></td></tr></table></figure>
+<h4 id="4-改变HTML样式"><a href="#4-改变HTML样式" class="headerlink" title="4.改变HTML样式"></a>4.<u>改变HTML样式</u></h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span><span class="comment">/*对象名*/</span>.style.property<span class="comment">/*属性名*/</span>=<span class="string">"新样式"</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mychar= <span class="built_in">document</span>.getElementById(<span class="string">"con"</span>);</div><div class="line">mychar.style.color=<span class="string">"red"</span>;</div><div class="line">mychar.style.backgroundColor=<span class="string">"#ccc"</span>;</div><div class="line">mychar.style.width=<span class="string">"300px"</span>;</div></pre></td></tr></table></figure>
+<h4 id="5-显示和隐藏"><a href="#5-显示和隐藏" class="headerlink" title="5.显示和隐藏"></a>5.<u>显示和隐藏</u></h4><p>使用display属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.style.display = value</div></pre></td></tr></table></figure>
+<p>value取值：none（隐藏）</p>
+<p>​             block（显示）</p>
+<h4 id="6-控制类名"><a href="#6-控制类名" class="headerlink" title="6.控制类名"></a>6.<u>控制类名</u></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">object.className = classname</div></pre></td></tr></table></figure>
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2016-12-12T07:58:57.695Z" itemprop="datePublished">2016-12-12</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【JaveScript】JavaScript入门篇" data-title="JavaScript入门篇" data-url="http://yoursite.com/2016/12/12/【JaveScript】JavaScript入门篇/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://gss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/d31b0ef41bd5ad6e9546d4d688cb39dbb6fd3c4a.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球JoseyDon♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
