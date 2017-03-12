@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>【javascript】CSS-DOM | ♥毛球JoseyDon♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球JoseyDon♥的博客">
+	<img src="/favicon.png" alt="♥毛球JoseyDon♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/11/%E3%80%90css%E3%80%91css%E4%B8%AD%E4%BD%BF%E7%94%A8em/" target="_blank">【css】css中使用em</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JaveScript%E3%80%91JavaScript%E5%85%A5%E9%97%A8%E7%AF%87/" target="_blank">【JaveScript】JavaScript入门篇</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JavaScript%E3%80%91%E4%BA%8B%E4%BB%B6/" target="_blank">【JavaScript】事件</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/02/22/%E3%80%90JavaScript%E3%80%91JavaScript%E5%AE%9E%E4%BE%8B/" target="_blank">【JavaScript】JavaScript实例</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【javascript】CSS-DOM
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>学习时间：2017.3.6-2017.3.8</p>
+<p>参考资料：javascript DOM 编程艺术</p>
+<h4 id="1-三位一体的页面"><a href="#1-三位一体的页面" class="headerlink" title="1.三位一体的页面"></a>1.三位一体的页面</h4><p>结构层：由HTML或XHTML等标记语言负责创建，利用标签对网页内容的语义含义做出描述。</p>
+<p>表示层：由CSS负责完成，CSS描述页面内容如何呈现。</p>
+<p>行为层：javascript DOM，负责内容应该如何响应事件。</p>
+<p>表示层和行为层总是存在的，因为存在默认样式和默认事件。</p>
+<h4 id="2-三者分离"><a href="#2-三者分离" class="headerlink" title="2.三者分离"></a>2.三者分离</h4><p>三种技术存在重叠区域。</p>
+<p>1.利用createElement和appendChild等DOM方法允许动态地创建和添加标记。</p>
+<p>2.css中:hover和:focus之类的伪类效果允许根据用户触发事件改变元素呈现效果。</p>
+<p>3.DOM样式给元素设定样式。</p>
+<h4 id="3-style属性"><a href="#3-style属性" class="headerlink" title="3.style属性"></a>3.style属性</h4><p>文档里每个元素都是一个对象，每个元素都有一个style属性值，它们也是一个对象。</p>
+<p>1.用DOM获取stlye对象的某个属性时，如果这个属性名没有特殊符号，则直接输入（eg：color），否则按驼峰命名法输入（eg：font-family）。</p>
+<p>2.在某些浏览器中color属性以RGB格式的颜色值返回，即使与设置的颜色格式不同。</p>
+<p>3.style属性是能用于内嵌样式。</p>
+<p>4.用DOM设置的样式可以用DOM再把他们检索出来。</p>
+<p>5.style对象的属性值永远是一个字符串。</p>
+<h4 id="4-根据元素在节点树的位置来设置样式"><a href="#4-根据元素在节点树的位置来设置样式" class="headerlink" title="4.根据元素在节点树的位置来设置样式"></a>4.根据元素在节点树的位置来设置样式</h4><p>1.CSS无法根据元素之间的相对位置关系来找出某个特定元素，可以用DOM来实现。</p>
+<p>2.目的：为紧跟h1标签后面的p变标签更改它的样式。</p>
+<p>3.用getElementByTagName找到所有h1元素。</p>
+<p>4.使用for循环遍历所有元素。</p>
+<p>5.h1[i].nextSibling可以找出文档中的下一节点。</p>
+<p>6.需要找到的是“下一元素节点”，于是设置一个getNextElement函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNextElement</span>(<span class="params">node</span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> (node.nodeType == <span class="number">1</span>) &#123;</div><div class="line">		<span class="keyword">return</span> node;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">if</span> (node.nextSibling) &#123;</div><div class="line">		<span class="keyword">return</span> getNextElement(node.nextSibling);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>7.得到下一元素节点，更改样式即可。</p>
+<p>8.检查浏览器能否理解DOM方法。</p>
+<h4 id="5-根据某种条件反复设置某种样式"><a href="#5-根据某种条件反复设置某种样式" class="headerlink" title="5.根据某种条件反复设置某种样式"></a>5.根据某种条件反复设置某种样式</h4><p>1.这里设置一个表格，目的是奇数行和偶数行的背景不同，实现斑马线效果。</p>
+<p>2.为了方便以后增减和修改，在浏览器不支持css3的情况下，进行函数的编写。</p>
+<p>3.先把文档中所有table元素找出来。</p>
+<p>4.找出每个table里的ty元素，创建odd变量变量并把它初始化为false。</p>
+<p>5.遍历所有数据行。</p>
+<p>6.如果变量odd的值是true，设置样式并把odd变量修改为false。</p>
+<p>7.如果变量odd的值时false，不设置样式，把odd变量值修改为true。</p>
+<p>8.检查浏览器能否理解DOM方法。</p>
+<h4 id="6-className属性"><a href="#6-className属性" class="headerlink" title="6.className属性"></a>6.className属性</h4><p>1.className属性是一个可读/可写的属性，凡是元素节点都有这个属性。</p>
+<p>2.如果目的是直接替换另一个class，则可以用element.className =  value;</p>
+<p>3.如果原来没有任何class，直接对className属性赋值。</p>
+<p>4.如果目的是追加一个class，element.className  += “ 新加的class名”（class名前有空格）</p>
+<p>这种情况，</p>
+<p>1）检查cassName属性的值是否为null。</p>
+<p>2）如果是，把新的class设置值直接赋值给className属性。</p>
+<p>3）如果不是，把一个空格和新的class设置值追加到className属性上去。</p>
+<h4 id="7-对函数进行抽象"><a href="#7-对函数进行抽象" class="headerlink" title="7.对函数进行抽象"></a>7.对函数进行抽象</h4><p>把一个非常具体的东西改进为一个较为通用的东西的过程叫做抽象。</p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2017-03-12T11:46:38.177Z" itemprop="datePublished">2017-03-12</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【Javascript】CSS-DOM" data-title="【javascript】CSS-DOM" data-url="http://yoursite.com/2017/03/12/【Javascript】CSS-DOM/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://gss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/d31b0ef41bd5ad6e9546d4d688cb39dbb6fd3c4a.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球JoseyDon♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>

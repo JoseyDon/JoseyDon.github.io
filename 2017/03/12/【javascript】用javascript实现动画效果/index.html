@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>【javascript】用javascript实现动画效果 | ♥毛球JoseyDon♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球JoseyDon♥的博客">
+	<img src="/favicon.png" alt="♥毛球JoseyDon♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/11/%E3%80%90css%E3%80%91css%E4%B8%AD%E4%BD%BF%E7%94%A8em/" target="_blank">【css】css中使用em</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JaveScript%E3%80%91JavaScript%E5%85%A5%E9%97%A8%E7%AF%87/" target="_blank">【JaveScript】JavaScript入门篇</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JavaScript%E3%80%91%E4%BA%8B%E4%BB%B6/" target="_blank">【JavaScript】事件</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/02/22/%E3%80%90JavaScript%E3%80%91JavaScript%E5%AE%9E%E4%BE%8B/" target="_blank">【JavaScript】JavaScript实例</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【javascript】用javascript实现动画效果
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>学习时间：2016.3.8-2016.3.9</p>
+<p>参考资料：javascript DOM编程艺术</p>
+<p>目标：学习动画基础知识，用动画丰富网页的浏览效果。</p>
+<p>动画：动画就是让元素的位置随着时间而不断地发生变化。</p>
+<h4 id="1-位置"><a href="#1-位置" class="headerlink" title="1.位置"></a>1.位置</h4><p>对动画实现效果的初末位置进行设置。</p>
+<h4 id="2-时间"><a href="#2-时间" class="headerlink" title="2.时间"></a>2.时间</h4><p>1.使用setTimeout(“函数名”,时间) 这里的时间以毫秒为单位。</p>
+<p>2.如果想取消某个正在排队等待执行的函数，就必须事先把setTimeout函数的返回值赋值给一个变量。</p>
+<p>3.用clearTimeout函数来取消等待执行队列里的某个函数，这个函数需要的参数是setTimeout函数的返回值。</p>
+<p>4.要达到动态效果，需要变化量随着时间而递增。</p>
+<p>5.获得元素的当前位置。</p>
+<p>6.如果元素已经到达它的目的地，则退出这个函数。</p>
+<p>7.如果元素尚未到达它的目的地，则把它向目的地移近一点。</p>
+<p>8.经过一段时间间隔之后从第五步开始重复上述步骤。</p>
+<p>9.在获取当前位置时，我们得到的是字符串而不是数字，为了得到数字，使用parseInt(“string”)来得到字符串中的数字。</p>
+<p>10.对函数进行抽象。把已有的具体量作为通用参数。 </p>
+<h4 id="3-实用的动画"><a href="#3-实用的动画" class="headerlink" title="3.实用的动画"></a>3.实用的动画</h4><p>1.除非浏览器允许用户冻结移动着的内容，否则就应该避免让内容在页面中移动。</p>
+<p>2.目的：创建一个链接列表，当鼠标停留在任意链接时，图片自动移动。</p>
+<p>3.方法：把全部图片放在一张图片上，利用css溢出就隐藏功能，即只能展现小窗口的内容，通过JavaScript来对图片进行移动，使在小窗口出现的内容与停留链接对应。</p>
+<p>4.onmouseover 属性在鼠标指针移动到元素上时触发moveElement函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">prepareSlideshow</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">if</span> (!<span class="built_in">document</span>.getElementsByTagName) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</div><div class="line">	<span class="keyword">if</span> (!<span class="built_in">document</span>.getElementById) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</div><div class="line">	<span class="keyword">if</span> (!<span class="built_in">document</span>.getElementById(<span class="string">"preview"</span>)) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</div><div class="line">	<span class="keyword">if</span> (!<span class="built_in">document</span>.getElementById(<span class="string">"linklist"</span>)) &#123;<span class="keyword">return</span> <span class="literal">false</span>;&#125;</div><div class="line">	<span class="keyword">var</span> preview = <span class="built_in">document</span>.getElementById(<span class="string">"preview"</span>);</div><div class="line">	preview.style.position = <span class="string">"absolute"</span>;</div><div class="line">	preview.style.left = <span class="string">"0px"</span>;</div><div class="line">	preview.style.top = <span class="string">"0px"</span>;</div><div class="line">	<span class="keyword">var</span> list = <span class="built_in">document</span>.getElementById(<span class="string">"linklist"</span>);</div><div class="line">	<span class="keyword">var</span> links = list.getElementsByTagName(<span class="string">'a'</span>);</div><div class="line">	links[<span class="number">0</span>].onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		moveElement(<span class="string">"preview"</span>,<span class="number">-100</span>,<span class="number">0</span>,<span class="number">10</span>);</div><div class="line">	&#125;</div><div class="line">	links[<span class="number">1</span>].onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		moveElement(<span class="string">"preview"</span>,<span class="number">-200</span>,<span class="number">0</span>,<span class="number">10</span>);</div><div class="line">	&#125;</div><div class="line">	links[<span class="number">2</span>].onmouseover = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		moveElement(<span class="string">"preview"</span>,<span class="number">-300</span>,<span class="number">0</span>,<span class="number">10</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">addLoadEvent(prepareSlideshow);</div></pre></td></tr></table></figure>
+<p>5.这样基本实现了切换效果，但存在一个问题是如果当鼠标在不同链接中来回移动，动画效果会变得非常混乱。对moveElement函数进行改进。</p>
+<p>6.问题：在抽象过程中，一个全局变量存在一个隐患，不管上次调用是否已经把图片移到最终位置，moveElement函数都会被再次调用并试图把这个图片移动到另一个地方去。于是就显示出类似于“拔河”的动画效果。</p>
+<p>7.把moveElement函数中的全局变量movemt设置为elem变量的属性，达到只与某个特定元素有关的变量是存在的。</p>
+<p>8.利用JavaScript为元素创建属性，element.property = value;然后使用clearTimeout函数。</p>
+<p>9.问题：每次图片移动都是以1px为单位的，这样显得不够平滑以及过于缓慢。</p>
+<p>10.目的：如果元素与目的地较远，就让它每次前进一大步，如果与目的地较近，就让它每次前进一小步。</p>
+<p>11.算出当前位置和目的地的差距，这个结果除以10将是它每次前进的距离。</p>
+<p>12.这样做会在结果小于1px的时候出现问题，我们没办法将元素前进小于1px的距离，并且这样更加缓慢。使用Math对象的ceil方法进行解决。</p>
+<p>13.Math.ceil(number).这个方法将把浮点数number向大于方向舍入为与之最为接近的整数。</p>
+<p>14.延伸一个，floor则是将number向小于方向舍入为与之最为接近的整数。round属性将把number舍入为与之最近的整数。</p>
+<p>15.安全性检查，在函数最开头默认了elem元素已有left样式属性和top样式属性。但实际情况中可能没有。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (!elem.style.left) &#123;</div><div class="line">	elem.style.left = <span class="string">"0px"</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span> (!elem.style.top) &#123;</div><div class="line">	elem.style.top = <span class="string">"0xp"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>16.问题：html文档中的div和div里面的img标签是为了这个动画效果而存在的，如果没有JavaScript，那么html文文档中的这个div和里面的img就是多余的了。</p>
+<p>17.方法：使用JavaScript来创建div和里面的img，并且注意css对它们的设置。</p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2017-03-12T11:47:01.872Z" itemprop="datePublished">2017-03-12</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【javascript】用javascript实现动画效果" data-title="【javascript】用javascript实现动画效果" data-url="http://yoursite.com/2017/03/12/【javascript】用javascript实现动画效果/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://gss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/d31b0ef41bd5ad6e9546d4d688cb39dbb6fd3c4a.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球JoseyDon♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
