@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>【jQuery】jQuery基础学习 | ♥毛球JoseyDon♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球JoseyDon♥的博客">
+	<img src="/favicon.png" alt="♥毛球JoseyDon♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/11/%E3%80%90css%E3%80%91css%E4%B8%AD%E4%BD%BF%E7%94%A8em/" target="_blank">【css】css中使用em</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JaveScript%E3%80%91JavaScript%E5%85%A5%E9%97%A8%E7%AF%87/" target="_blank">【JaveScript】JavaScript入门篇</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JavaScript%E3%80%91%E4%BA%8B%E4%BB%B6/" target="_blank">【JavaScript】事件</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/02/22/%E3%80%90JavaScript%E3%80%91JavaScript%E5%AE%9E%E4%BE%8B/" target="_blank">【JavaScript】JavaScript实例</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90javascript%E3%80%91%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" target="_blank">【javascript】用javascript实现动画效果</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90Javascript%E3%80%91CSS-DOM/" target="_blank">【javascript】CSS-DOM</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91%E8%BD%AE%E6%92%AD%E5%9B%BE%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" target="_blank">【Javascript】轮播图实现原理</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91UI%E7%BB%84%E4%BB%B6%E4%B9%8B%E6%8E%92%E5%BA%8F%E8%A1%A8%E6%A0%BC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">【Javascript】UI组件之排序表格学习笔记</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【jQuery】jQuery基础学习
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>学习时间：2017.3.31-2017.4.8</p>
+<p>学习资料：<a href="http://www.imooc.com/learn/418" target="_blank" rel="external">点击此处访问</a></p>
+<h1 id="一、样式"><a href="#一、样式" class="headerlink" title="一、样式"></a>一、样式</h1><h4 id="1-环境搭建"><a href="#1-环境搭建" class="headerlink" title="1.环境搭建"></a>1.环境搭建</h4><p>进入<a href="http://jquery.com/download/" target="_blank" rel="external">官方网站</a>获取，注意不同版本对浏览器的兼容性不同。在&lt; head &gt;标签内通过script标签引入jQuery库即可。</p>
+<p>例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=<span class="string">"https://code.jquery.com/jquery-1.9.1.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h4 id="2-使用jQuery在页面中显示文本"><a href="#2-使用jQuery在页面中显示文本" class="headerlink" title="2.使用jQuery在页面中显示文本"></a>2.使用jQuery在页面中显示文本</h4><p>$(document).ready 的作用是等页面的文档（document）中的节点都加载完毕后，再执行后续的代码，因为我们在执行代码的时候，可能会依赖页面的某一个元素，我们要确保这个元素真正的的被加载完毕后才能正确的使用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">                  $(<span class="string">"div"</span>).html(<span class="string">"输入你想显示的文本。"</span>);</div><div class="line">          &#125;);</div></pre></td></tr></table></figure>
+<h4 id="3-jQuery对象"><a href="#3-jQuery对象" class="headerlink" title="3.jQuery对象"></a>3.jQuery对象</h4><p><strong>首先明确一点，jquery对象和DOM对象是不一样的。</strong></p>
+<p>通过jQuery方法包装后的对象，是一个类数组对象，它与DOM对象唯一的共同点是都能操作DOM。</p>
+<p>通过jQuery处理DOM的操作，可以不考虑哪个DOM节点有哪些方法，也可以不关心不同浏览器的兼容性问题。使得代码更加精短。</p>
+<p>下面是分别用jQuery和DOM方法使p元素的内容和颜色更改的方法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 使用javascrip语法 --&gt;</span></div><div class="line">window.onload = function()&#123;</div><div class="line">			var p = document.getElementById('pra');</div><div class="line">			p.innerHTML = '你想显示的文字';</div><div class="line">			p.style.color = 'red';	</div><div class="line">    </div><div class="line">    <span class="comment">&lt;!-- 使用jQuery语法 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">var</span> $p = $(<span class="string">'#pra'</span>);</div><div class="line">            $p.html(<span class="string">'你想显示的文字'</span>).css(<span class="string">'color'</span>,<span class="string">'red'</span>);</div><div class="line">        &#125;);</div></pre></td></tr></table></figure>
+<p><strong>jQuery对象可以传化成DOM对象。</strong></p>
+<p>jQuery是一个<strong>类数组对象</strong>，而DOM对象就是一个单独的<strong>DOM元素</strong>。</p>
+<p>知道了这一点，就可以利用数组下标的方式读取到jQuery中的DOM对象。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>元素一<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>元素二<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>元素三<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>方法一：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> $div = $(<span class="string">'div'</span>) <span class="comment">//jQuery对象</span></div><div class="line"><span class="keyword">var</span> div = $div[<span class="number">0</span>] <span class="comment">//转化成DOM对象</span></div><div class="line">div.style.color = <span class="string">'red'</span> <span class="comment">//操作dom对象的属性</span></div></pre></td></tr></table></figure>
+<p>方法二：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//jQuery对象自身提供一个.get()方法允许我们直接访问jQuery对象中相关的DOM节点，get方法中提供一个元素的索引：</span></div><div class="line"><span class="keyword">var</span> $div = $(<span class="string">'div'</span>) <span class="comment">//jQuery对象</span></div><div class="line"><span class="keyword">var</span> div = $div.get(<span class="number">0</span>) <span class="comment">//通过get方法，转化成DOM对象</span></div><div class="line">div.style.color = <span class="string">'red'</span> <span class="comment">//操作dom对象的属性</span></div></pre></td></tr></table></figure>
+<p>事实上，get方法的源码就是利用第一种方法。包装成一个get让开发者更直接方便的使用。</p>
+<p><strong>DOM对象转化成jQuery对象</strong></p>
+<p>$(参数)是一个多功能的方法，通过传递不同的参数而产生不同的作用。</p>
+<p>如果传递给$(参数)函数的参数是一个DOM对象，jQuery方法会把这个DOM对象给<strong>包装成一个新的jQuery对象</strong>。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>元素一<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>元素二<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>元素三<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//通过getElementsByTagName获取到所有div节点的元素，结果是一个dom合集对象，不过这个对象是一个数组合集(3个div元素)。通过$(div)方法转化成jQuery对象，通过调用jQuery对象中的first与css方法查找第一个元素并且改变其颜色。</span></div><div class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>); <span class="comment">//dom对象</span></div><div class="line"><span class="keyword">var</span> $div = $(div); <span class="comment">//jQuery对象</span></div><div class="line"><span class="keyword">var</span> $first = $div.first(); <span class="comment">//找到第一个div元素</span></div><div class="line">$first.css(<span class="string">'color'</span>, <span class="string">'red'</span>); <span class="comment">//给第一个元素设置颜色</span></div></pre></td></tr></table></figure>
+<h4 id="4-jQuery选择器"><a href="#4-jQuery选择器" class="headerlink" title="4.jQuery选择器"></a>4.jQuery选择器</h4><h5 id="1）id选择器：用来查找ID，即元素的id属性。"><a href="#1）id选择器：用来查找ID，即元素的id属性。" class="headerlink" title="1）id选择器：用来查找ID，即元素的id属性。"></a>1）id选择器：用来查找ID，即元素的id属性。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$( <span class="string">"#id"</span> )</div></pre></td></tr></table></figure>
+<h5 id="2）类选择器：通过class样式类名来获取节点。"><a href="#2）类选择器：通过class样式类名来获取节点。" class="headerlink" title="2）类选择器：通过class样式类名来获取节点。"></a>2）类选择器：通过class样式类名来获取节点。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$( <span class="string">".class"</span> )</div></pre></td></tr></table></figure>
+<p>id选择器与类选择器的差别是，id选择器最快，最高效，缺点是无法重复。</p>
+<h5 id="3）元素选择器：根据给定标记名称选择所有元素。"><a href="#3）元素选择器：根据给定标记名称选择所有元素。" class="headerlink" title="3）元素选择器：根据给定标记名称选择所有元素。"></a>3）元素选择器：根据给定标记名称选择所有元素。</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$( <span class="string">"element"</span> )</div></pre></td></tr></table></figure>
+<p>这里注意的是，标签可以是多个的，所以也可以同样得到一个集合。</p>
+<h5 id="4）全选择器（-选择器）"><a href="#4）全选择器（-选择器）" class="headerlink" title="4）全选择器（*选择器）"></a>4）全选择器（*选择器）</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$( <span class="string">"*"</span> )</div></pre></td></tr></table></figure>
+<p>如果通过原生的方法获取到对应的节点，但兼容性的问题让我们头疼。使用jQuery，让我们省了很多功夫。</p>
+<h5 id="5）层级选择器"><a href="#5）层级选择器" class="headerlink" title="5）层级选择器"></a>5）层级选择器</h5><p><img src="http://img.mukewang.com/5590e98b0001f60d06130229.jpg" alt="对比层级选择器的区别"></p>
+<p><strong>层级选择器之间有很多相似与不同点：</strong></p>
+<p>层级选择器都有一个<strong>参考节点</strong><br>后代选择器包含子选择器的选择的内容<br>一般兄弟选择器包含相邻兄弟选择的内容<br>相邻兄弟选择器和一般兄弟选择器所选择到的元素，必须在<strong>同一个父元素</strong>下</p>
+<p>让我们用一个例子来说明这些关系：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"imooc.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://libs.baidu.com/jquery/1.9.1/jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>子选择器与后代选择器<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>div下的第一个p元素<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>div下的第一个p元素<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"imooc"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">article</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span>div下的article下的p元素<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"imooc"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">article</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">p</span>&gt;</span>div下的article下的p元素<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="comment">//子选择器</span></div><div class="line">        <span class="comment">//$('div &gt; p') 选择所有div元素里面的子元素P</span></div><div class="line">        $(<span class="string">'div &gt; p'</span>).css(<span class="string">"border"</span>, <span class="string">"1px groove red"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="comment">//后代选择器</span></div><div class="line">        <span class="comment">//$('div  p') 选择所有div元素里面的p元素</span></div><div class="line">        $(<span class="string">'div p'</span>).css(<span class="string">"border"</span>, <span class="string">"1px groove blue"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>相邻兄弟选择器与一般兄弟选择器<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>兄弟节点div, +~选择器不能向前选择<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"prev"</span>&gt;</span>选择器span元素<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>span后第一个兄弟节点div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>兄弟节点div</div><div class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"small"</span>&gt;</span>子元素div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>兄弟节点span,不可选<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span>兄弟节点div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="comment">//相邻兄弟选择器</span></div><div class="line">        <span class="comment">//选取prev后面的第一个的div兄弟节点</span></div><div class="line">        $(<span class="string">'.prev + div'</span>).css(<span class="string">"border"</span>, <span class="string">"3px groove blue"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="comment">//一般相邻选择器</span></div><div class="line">        <span class="comment">//选取prev后面的所有的div兄弟节点</span></div><div class="line">        $(<span class="string">'.prev ~ div'</span>).css(<span class="string">"border"</span>, <span class="string">"3px groove blue"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="6）基本筛选选择器：用来更快捷的找到所需的DOM元素。"><a href="#6）基本筛选选择器：用来更快捷的找到所需的DOM元素。" class="headerlink" title="6）基本筛选选择器：用来更快捷的找到所需的DOM元素。"></a>6）基本筛选选择器：用来更快捷的找到所需的DOM元素。</h5><p><img src="http://img.mukewang.com/57cd1df2000146de06020498.jpg" alt="基本筛选选择器"></p>
+<p><strong>①</strong>:eq(), :lt(), :gt(), :even, :odd 用来筛选他们前面的匹配表达式的集合元素，根据之前匹配的元素在进一步筛选，注意jQuery合集都是从0开始索引<br><strong>②</strong>gt是一个段落筛选，从指定索引的下一个开始，gt(1) 实际从2开始</p>
+<p>同样让我们用一个例子来表达这些基本筛选器：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"imooc.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://libs.baidu.com/jquery/1.9.1/jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>基本筛选器<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>:first/:last/:even/:odd<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>div:first<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:even<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:odd<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:even<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:odd<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:even<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>div:last<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:odd<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="comment">//找到第一个div</span></div><div class="line">    $(<span class="string">".div:first"</span>).css(<span class="string">"color"</span>, <span class="string">"#CD00CD"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="comment">//找到最后一个div</span></div><div class="line">    $(<span class="string">".div:last"</span>).css(<span class="string">"color"</span>, <span class="string">"#CD00CD"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="comment">//:even 选择所引值为偶数的元素，从 0 开始计数</span></div><div class="line">    $(<span class="string">".div:even"</span>).css(<span class="string">"border"</span>, <span class="string">"3px groove red"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="comment">//:odd 选择所引值为奇数的元素，从 0 开始计数</span></div><div class="line">    $(<span class="string">".div:odd"</span>).css(<span class="string">"border"</span>, <span class="string">"3px groove blue"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    </div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>:eq/:gt/:lt<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:lt(3)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:lt(3)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:eq(2)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:gt(3)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:gt(3)<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="comment">//:eq</span></div><div class="line">    <span class="comment">//选择单个</span></div><div class="line">    $(<span class="string">".aaron:eq(2)"</span>).css(<span class="string">"border"</span>, <span class="string">"3px groove red"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="comment">//:gt 选择匹配集合中所有索引值大于给定index参数的元素</span></div><div class="line">    $(<span class="string">".aaron:gt(3)"</span>).css(<span class="string">"border"</span>, <span class="string">"3px groove blue"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    </div><div class="line">     <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="comment">//:lt 选择匹配集合中所有索引值小于给定index参数的元素</span></div><div class="line">    <span class="comment">//与:gt相反</span></div><div class="line">    $(<span class="string">".aaron:lt(2)"</span>).css(<span class="string">"border"</span>, <span class="string">"3px groove pink"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">    </div><div class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>:not<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"a"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>Aaron<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"b"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>慕课<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"c"</span> <span class="attr">checked</span>=<span class="string">"checked"</span> /&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="comment">//:not 选择所有元素去除不匹配给定的选择器的元素</span></div><div class="line">        <span class="comment">//选中所有紧接着没有checked属性的input元素后的p元素，赋予颜色</span></div><div class="line">        $(<span class="string">"input:not(:checked) + p"</span>).css(<span class="string">"background-color"</span>, <span class="string">"#CD00CD"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h5 id="7）内容筛选选择器"><a href="#7）内容筛选选择器" class="headerlink" title="7）内容筛选选择器"></a>7）内容筛选选择器</h5><p><img src="http://img.mukewang.com/57cd20bf0001a97f05290214.jpg" alt="内容筛选选择器"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"imooc.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://libs.baidu.com/jquery/1.9.1/jquery.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>内容筛选器<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>:contains/:has<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:contains<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:contains<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span>:has<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>:contains<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="comment">//查找所有class='div'中DOM元素中包含"contains"的元素节点</span></div><div class="line">        <span class="comment">//并且设置颜色</span></div><div class="line">        $(<span class="string">".div:contains(':contains')"</span>).css(<span class="string">"color"</span>, <span class="string">"#CD00CD"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">        <span class="comment">//查找所有class='div'中DOM元素中包含"span"的元素节点</span></div><div class="line">        <span class="comment">//并且设置颜色</span></div><div class="line">        $(<span class="string">".div:has(span)"</span>).css(<span class="string">"color"</span>, <span class="string">"blue"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>:parent/:empty<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">a</span>&gt;</span>:parent<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">a</span>&gt;</span>:parent<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">a</span>&gt;</span>:parent<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aaron"</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">       <span class="comment">//选择所有包含子元素或者文本的a元素</span></div><div class="line">       <span class="comment">//增加一个蓝色的边框</span></div><div class="line">       $(<span class="string">"a:parent"</span>).css(<span class="string">"border"</span>, <span class="string">"3px groove blue"</span>);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">       <span class="comment">//找到a元素下面的所有空节点(没有子元素)</span></div><div class="line">       <span class="comment">//增加一段文本与边框</span></div><div class="line">       $(<span class="string">"a:empty"</span>).text(<span class="string">":empty"</span>).css(<span class="string">"border"</span>, <span class="string">"3px groove red"</span>); </div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>:contains与:has都有查找的意思，但是contains查找包含“指定文本”的<strong>元素</strong>，has查找包含“指定元素”的<strong>元素</strong><br>如果:contains匹配的文本包含在元素的<strong>子元素</strong>中，同样认为是符合条件的。<br>:parent与:empty是相反的，两者所涉及的子元素，包括<strong>文本节点</strong></p>
+<h5 id="8）可见性筛选选择器"><a href="#8）可见性筛选选择器" class="headerlink" title="8）可见性筛选选择器"></a>8）可见性筛选选择器</h5><p><img src="http://img.mukewang.com/5590f6de0001e2b204460106.jpg" alt="可见性筛选选择器"></p>
+<p>要想合理使用这个选择器，首先我们要明白:hidden选择器的适用范围。</p>
+<p>1.样式为display=none；</p>
+<p>2.隐藏表单</p>
+<p>3.visibility</p>
+<p>等等。</p>
+<p>我们有几种方式可以隐藏一个元素：</p>
+<p><strong>1.display的值是none；</strong></p>
+<p>2.type-“hidden”的表单元素；</p>
+<p><strong>3.宽高都显示设置为0；</strong></p>
+<p><strong>4.一个祖先元素是隐藏的，该元素是不会在页面上显示；</strong></p>
+<p>5.visibility的值是hidden；</p>
+<p>6.opacity的值是0。</p>
+<p>如果元素中占据文档中一定的空间，元素就被认为是可见的。只要可见元素的宽或高大于零，就占据一定空间。例如visibility：hidden或opacity：0被认为是可见的，因为他们占用空间，只是可见性被隐藏了。另外，<strong>不在文档中的元素被认为是不可见的。</strong></p>
+<h5 id="9）属性筛选选择器：基于属性来定位一个元素"><a href="#9）属性筛选选择器：基于属性来定位一个元素" class="headerlink" title="9）属性筛选选择器：基于属性来定位一个元素"></a>9）属性筛选选择器：基于属性来定位一个元素</h5><p><img src="http://img.mukewang.com/57d654200001c46507360560.jpg" alt="属性筛选选择器">在这么多属性选择器中<strong>[attr=”value”]</strong>和<strong>[attr*=”value”]</strong>是最实用的。</p>
+<h4 id="10）子元素筛选选择器"><a href="#10）子元素筛选选择器" class="headerlink" title="10）子元素筛选选择器"></a>10）子元素筛选选择器</h4><p>子元素筛选选择器不常使用。</p>
+<p><img src="http://img.mukewang.com/559105da0001301105960331.jpg" alt="子元素筛选选择器"></p>
+<ol>
+<li>:first只匹配一个单独的元素，但是:first-child选择器可以匹配多个：即为每个父级元素匹配第一个子元素。这相当于:nth-child(1)</li>
+<li>:last 只匹配一个单独的元素， :last-child 选择器可以匹配多个元素：即，为每个父级元素匹配最后一个子元素</li>
+<li>如果子元素只有一个的话，:first-child与:last-child是同一个</li>
+<li>:only-child匹配某个元素是父元素中唯一的子元素，就是说当前子元素是父元素中唯一的元素，则匹配</li>
+<li>jQuery实现:nth-child(n)是严格来自CSS规范，所以n值是“索引”，也就是说，从1开始计数，:nth-child(index)从1开始的，而eq(index)是从0开始的</li>
+<li>nth-child(n) 与 :nth-last-child(n) 的区别前者是从前往后计算，后者从后往前计算</li>
+</ol>
+<h5 id="11）表单元素选择器"><a href="#11）表单元素选择器" class="headerlink" title="11）表单元素选择器"></a>11）表单元素选择器</h5><p><img src="http://img.mukewang.com/5592040d0001f8eb04940441.jpg" alt="表单元素选择器"></p>
+<p>除了input筛选选择器，几乎每个表单类别筛选器都对应一个input元素的type值。大部分表单类别筛选器可以使用属性筛选器替换。比如 $(‘:password’) == $(‘[type=password]’)</p>
+<h5 id="12）表单对象属性筛选选择器：对所选择的的表单元素进行筛选"><a href="#12）表单对象属性筛选选择器：对所选择的的表单元素进行筛选" class="headerlink" title="12）表单对象属性筛选选择器：对所选择的的表单元素进行筛选"></a>12）表单对象属性筛选选择器：对所选择的的表单元素进行筛选</h5><p><img src="http://img.mukewang.com/55920c2f0001198b04940201.jpg" alt="表单对象属性筛选选择器"></p>
+<ol>
+<li>选择器适用于复选框和单选框，对于下拉框元素, 使用 :selected 选择器</li>
+<li>在某些浏览器中，选择器:checked可能会错误选取到&lt; option &gt;元素，所以保险起见换用选择器input:checked，确保只会选取&lt; input &gt;元素</li>
+</ol>
+<h5 id="13）特殊选择器this"><a href="#13）特殊选择器this" class="headerlink" title="13）特殊选择器this"></a>13）特殊选择器this</h5><p>通过$()方法传入this，把这个this加工成jQuery对象，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">this，表示当前的上下文对象是一个html对象，可以调用html对象所拥有的属性和方法。</div><div class="line">$(this),代表的上下文对象是一个jquery的上下文对象，可以调用jQuery的方法和属性值。</div></pre></td></tr></table></figure>
+<h4 id="5-属性与样式"><a href="#5-属性与样式" class="headerlink" title="5.属性与样式"></a>5.属性与样式</h4><h5 id="1-attr-与-removeAttr"><a href="#1-attr-与-removeAttr" class="headerlink" title="1).attr()与.removeAttr()"></a>1).attr()与.removeAttr()</h5><p>每个元素都有一个或者多个特性，我们把这种特性称为属性，操作属性的DOM方法主要有三个:1)getAttribute方法得到元素的属性值。2）setAttribute方法建立属性值。3）removeAttribute方法删除属性值。我们在jquery里面使用两个方法来搞定这些内容以及其中蕴含的一些问题。</p>
+<p>先让我们来介绍.attr()方法**。这个方法用于获取和设置元素属性。</p>
+<ol>
+<li>获取属性的值：attr(属性名)</li>
+<li>设置属性的值：attr(属性名，属性值)</li>
+<li>属性的函数值：attr(属性名，函数值)</li>
+<li>给指定元素设置多个属性值：attr(attributes)</li>
+</ol>
+<p>再来介绍.removeAttr()删除方法，把需要删除的属性名作为参数填入即可。</p>
+<h5 id="2）-html-及-text"><a href="#2）-html-及-text" class="headerlink" title="2）.html()及.text()"></a>2）.html()及.text()</h5><p>这两个方法用于<strong>读取修改元素的html结构</strong>或者<strong>元素的文本内容</strong>。</p>
+<p><strong>.html()方法：</strong></p>
+<ol>
+<li>.html()不传入值，就是获取元素中第一个匹配元素的HTML内容。</li>
+<li>.html(字符串) 设置每一个匹配元素的html内容。</li>
+<li>.html(function(index,oldhtml))用来返回设置HTML内容的一个函数。</li>
+</ol>
+<p>.html()方法针对的是整个HTML内容，不仅仅是文本内容。</p>
+<p><strong>.text()方法：</strong></p>
+<ol>
+<li>.text()得到匹配元素集合中每个元素的合并文本，包括他们的后代。</li>
+<li>.text(字符串)用于设置匹配元素内容的文本</li>
+<li>.text(function(index,text))用于返回设置文本内容的一个函数。</li>
+</ol>
+<p>.text()结果返回一个字符串，包含所有匹配元素的合并文本。</p>
+<h5 id="3）-val"><a href="#3）-val" class="headerlink" title="3）.val()"></a>3）.val()</h5><p>这个方法主要用于处理表单元素的值，比如input，select和textarea。</p>
+<p>.val()方法：</p>
+<ol>
+<li>.val() 无参数，获取匹配的元素集合中第一个元素的当前值。</li>
+<li>.val(value) 设置匹配的元素集合中每个元素的值。</li>
+<li>.val(function) 一个用来返回设置值的函数。</li>
+</ol>
+<p>如果通过这个方法处理select元素，当没有选项被选中时返回null。</p>
+<p>这个方法多用来设置表单字段的值。</p>
+<h5 id="4）-addClass-和-removeClass"><a href="#4）-addClass-和-removeClass" class="headerlink" title="4）.addClass()和.removeClass()"></a>4）.addClass()和.removeClass()</h5><p>.addClass()方法：</p>
+<ol>
+<li>.addClass(className):为每个匹配元素所要增加的一个或多个样式名。</li>
+<li>.addClass( function(index, currentClass) )  这个函数返回一个或更多用空格隔开的要增加的样式名</li>
+</ol>
+<p>这个方法不会替换一个样式类名，只能增加。</p>
+<p>.removeClass()方法：</p>
+<ol>
+<li>.removeClass( [className ] )：每个匹配元素移除的一个或多个用空格隔开的样式名</li>
+<li>.removeClass( function(index, class) ) ： 一个函数，返回一个或多个将要被移除的样式名</li>
+</ol>
+<p>如果一个样式类名作为一个参数,只有这样式类会被从匹配的元素集合中删除 。 如果没有样式名作为参数，那么所有的样式类将被移除。</p>
+<h5 id="5）-toggleClass"><a href="#5）-toggleClass" class="headerlink" title="5）.toggleClass()"></a>5）.toggleClass()</h5><p>这个方法可以在addClass与removeClass的互斥切换。</p>
+<p><strong>.toggleClass( )方法：</strong>在匹配的元素集合中的每个元素上添加或删除一个或多个样式类,取决于这个样式类是否存在或值切换属性。即：如果存在（不存在）就删除（添加）一个类</p>
+<ol>
+<li>.toggleClass( className )：在匹配的元素集合中的每个元素上用来切换的一个或多个（用空格隔开）样式类名</li>
+<li>.toggleClass( className, switch )：一个布尔值，用于判断样式是否应该被添加或移除</li>
+<li>.toggleClass( [switch ] )：一个用来判断样式类添加还是移除的 布尔值</li>
+<li>.toggleClass( function(index, class, switch) [, switch ] )：用来返回在匹配的元素集合中的每个元素上用来切换的样式类名的一个函数。接收元素的索引位置和元素旧的样式类作为参数</li>
+</ol>
+<p><strong>注意事项：</strong></p>
+<ol>
+<li>toggleClass是一个互斥的逻辑，也就是通过判断对应的元素上是否存在指定的Class名，如果有就删除，如果没有就增加</li>
+<li>toggleClass会保留原有的Class名后新增，通过空格隔开</li>
+</ol>
+<h5 id="6）-css"><a href="#6）-css" class="headerlink" title="6） .css()"></a>6） .css()</h5><p><strong>.css() 方法：获取元素样式属性的计算值或者设置元素的CSS属性</strong></p>
+<p><strong>获取：</strong></p>
+<ol>
+<li>.css( propertyName ) ：获取匹配元素集合中的第一个元素的样式属性的计算值</li>
+<li>.css( propertyNames )：传递一组数组，返回一个对象结果</li>
+</ol>
+<p><strong>设置：</strong></p>
+<ol>
+<li>.css(propertyName, value )：设置CSS</li>
+<li>.css( propertyName, function )：可以传入一个回调函数，返回取到对应的值进行处理</li>
+<li>.css( properties )：可以传一个对象，同时设置多个样式</li>
+</ol>
+<p><strong>注意事项：</strong></p>
+<ol>
+<li>浏览器属性获取方式不同，在获取某些值的时候都jQuery采用统一的处理，比如颜色采用RBG，尺寸采用px</li>
+<li>.css()方法支持驼峰写法与大小写混搭的写法，内部做了容错的处理</li>
+<li>当一个数只被作为值（value）的时候， jQuery会将其转换为一个字符串，并添在字符串的结尾处添加px，例如 .css(“width”,50}) 与 .css(“width”,”50px”})一样</li>
+</ol>
+<h4 id="5-jQuery-DOM"><a href="#5-jQuery-DOM" class="headerlink" title="5.jQuery DOM"></a>5.jQuery DOM</h4><p>这一部分分为五个小部分。分别是DOM节点的创建，DOM节点的插入，DOM节点的删除，DOM节点的复制与替换，jQuery遍历。</p>
+<h5 id="1）DOM创建节点"><a href="#1）DOM创建节点" class="headerlink" title="1）DOM创建节点"></a>1）DOM创建节点</h5><p>我们创建一个节点元素时，同时包括创建该节点元素的属性和样式。</p>
+<p>如果使用原生方法创建的话，我们需要：</p>
+<ul>
+<li>创建元素：document.createElement</li>
+<li>设置属性：setAttribute</li>
+<li>添加文本：innerHTML</li>
+<li>加入文档：appendChild</li>
+</ul>
+<p>而使用jQuery方法只需要一条语句就够了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"&lt;div class='right'&gt;&lt;div class='aaron'&gt;动态创建DIV元素节点&lt;/div&gt;&lt;/div&gt;"</span>)</div></pre></td></tr></table></figure>
+<p>这样的优点是：</p>
+<p>每一个元素节点不用单独创建</p>
+<p>节点是属性不需要单独设置，而且设置的接口比较很统一</p>
+<p>添加到指定的元素位置比较灵活</p>
+<p>最后还有一个最重要的：浏览器兼容问题得到解决</p>
+<h5 id="2）DOM节点插入"><a href="#2）DOM节点插入" class="headerlink" title="2）DOM节点插入"></a>2）DOM节点插入</h5><p><strong>1.内部插入append()与appendTo()</strong></p>
+<p><img src="http://img.mukewang.com/56cc12f800017b4104480146.jpg" alt=""></p>
+<p>简单来说，为了实现把A追加到B之后，append()前面是B，后面是A。appendTo()前面是A，后面是B。</p>
+<p><strong>2.内部插入prepend()与prependTo()</strong></p>
+<p><img src="http://img.mukewang.com/57481c3900013c6e05000193.jpg" alt=""></p>
+<p>简单来说，为了实现把A追加到B之前，prepend()前面是B，后面是A。prependTo()前面是A，后面是B。</p>
+<p><strong>3.DOM外部插入after()与before()</strong></p>
+<p><img src="http://img.mukewang.com/57481b6b00018e3405210197.jpg" alt=""></p>
+<p>这两种方法都是用来对相对选中元素外部增加相邻兄弟节点。</p>
+<p><strong>4.DOM外部插入insertAfter()和insertBefor()</strong></p>
+<p><img src="http://img.mukewang.com/57481d230001b0f305170241.jpg" alt="img"></p>
+<p>.before()和.insertBefore()实现同样的功能。</p>
+<p>主要的区别是语法——内容和目标的位置。 对于before()选择表达式在函数前面，内容作为参数，而.insertBefore()刚好相反，内容在方法前面，它将被放在参数里元素的前面。</p>
+<p>.after()和.insertAfter() 实现同样的功能。</p>
+<p>主要的不同是语法——特别是（插入）内容和目标的位置。 对于after()选择表达式在函数的前面，参数是将要插入的内容。对于 .insertAfter(), 刚好相反，内容在方法前面，它将被放在参数里元素的后面。</p>
+<p>before、after与insertBefore。insertAfter的除了目标与位置的不同外，后面的不支持多参数处理。</p>
+<h4 id="3）DOM节点删除"><a href="#3）DOM节点删除" class="headerlink" title="3）DOM节点删除"></a>3）DOM节点删除</h4><p><strong>1.empty()：清空方法</strong></p>
+<p>这种方法和删除不太一样，因为他只能移除指定元素中的所有子节点，而这个节点本身没有被删除。</p>
+<p><strong>2.remove()</strong></p>
+<p>这种方法不仅可以移除指定元素中的所有子节点，也可以移除元素自身。并且会自动操作事件销毁方法。</p>
+<p>除此以外，remove可以传递一个选择器表达式用来过滤将被移除的匹配元素集合，可以选择性的删除指定的节点。</p>
+<p><strong>3.detach()：保留数据的删除操作</strong></p>
+<p>这种方法不会把匹配的元素从jQuery对象中删除，仅是移除对象，所以未来可以使用这些匹配的元素。并且绑定的事件，附加的数据等都会保留下来。当append之后，又重新显示出来。</p>
+<p>并且detach只能处理通过jQuery的方法绑定的事件或数据。</p>
+<p>可以类比成<strong>剪切</strong>。</p>
+<h4 id="4）DOM节点复制与替换"><a href="#4）DOM节点复制与替换" class="headerlink" title="4）DOM节点复制与替换"></a>4）DOM节点复制与替换</h4><p><strong>1.拷贝clone()</strong></p>
+<p>这个方法复制所有匹配的元素集合。如果节点有事件或者数据之类的其他处理，我们需要通过clone(true)传递一个布尔值true。</p>
+<p>类比的话，clone就是模仿了个结构，细节缺失。而clone(true)就相当于一个分身。</p>
+<p><strong>2.replaceWith()和replaceAll()</strong></p>
+<p>.replaceWith( newContent )：用提供的内容替换集合中所有匹配的元素并且返回被删除元素的集合</p>
+<p>.replaceAll( target ) ：用集合的匹配元素替换每个目标元素</p>
+<ul>
+<li>.replaceAll()和.replaceWith()功能类似，主要是目标和源的位置区别</li>
+<li>.replaceWith()与.replaceAll() 方法会删除与节点相关联的所有数据和事件处理程序</li>
+<li>.replaceWith()方法，和大部分其他jQuery方法一样，返回jQuery对象，所以可以和其他方法链接使用</li>
+<li>.replaceWith()方法返回的jQuery对象引用的是替换前的节点，而不是通过replaceWith/replaceAll方法替换后的节点</li>
+</ul>
+<p><strong>3.wrap()：包裹方法</strong></p>
+<p>将一个元素用其他元素包裹起来，也就是给它增加一个父元素。</p>
+<p>括号中的是用来包裹其他元素的元素，前面的是被包裹元素。</p>
+<p><strong>4.unwrap()：删除包裹方法</strong></p>
+<p>这个方法的作用与wrap方法相反。删除指定元素的父级元素。</p>
+<p>前面是指定元素，括号内不需要参数。</p>
+<p><strong>5.wrapAll()：集中将元素包裹</strong></p>
+<p>.wrapAll( wrappingElement )：给集合中匹配的元素增加一个外面包裹HTML结构。</p>
+<p>前面是指定的某些元素，将它们一起成为wrappingElement的子元素。</p>
+<p><strong>6.wraplnner()</strong></p>
+<p>.wrapInner( wrappingElement )：给集合中匹配的元素的内部，增加包裹的HTML结构</p>
+<p>可以简单的理解成wrap()是穿外套，wrapInner()是穿内衣。</p>
+<h4 id="5）jQuery遍历"><a href="#5）jQuery遍历" class="headerlink" title="5）jQuery遍历"></a>5）jQuery遍历</h4><p><strong>1.children()</strong></p>
+<p>找到它的第一级子元素。</p>
+<p><strong>2.find()</strong></p>
+<p>找到它后代中指定的元素。</p>
+<p><strong>3.parent()</strong></p>
+<p>找到它上一级的父元素。</p>
+<p><strong>4.parents()</strong></p>
+<p>找到它的祖先元素。</p>
+<p><strong>5.closest()</strong></p>
+<p>找到它本身和它的祖先元素。</p>
+<p>它和parents的区别是：</p>
+<ol>
+<li>起始位置不同：.closest开始于当前元素 .parents开始于父元素</li>
+<li>遍历的目标不同：.closest要找到指定的目标，.parents遍历到文档根元素，closest向上查找，直到找到一个匹配的就停止查找，parents一直查找到根元素，并将匹配的元素加入集合</li>
+<li>结果不同：.closest返回的是包含零个或一个元素的jquery对象，parents返回的是包含零个或一个或多个元素的jquery对象</li>
+</ol>
+<p><strong>6.next()</strong></p>
+<p>查找指定元素集合中每个元素紧邻的后面同辈元素的元素集合。</p>
+<p><strong>7.prev()</strong></p>
+<p>快速查找指定元素集合中每一个元素紧邻的前面同辈元素的元素集合。</p>
+<p><strong>8.add()</strong></p>
+<p>用来创建一个新的jQuery对象 ，元素添加到匹配的元素集合中。</p>
+<p><strong>9.each()</strong></p>
+<p>.each() 方法就是一个for循环的迭代器，它会迭代jQuery对象合集中的每一个DOM元素。每次回调函数执行时，会传递当前循环次数作为参数(从0开始计数).</p>
+<h4 id="6-jQuery事件"><a href="#6-jQuery事件" class="headerlink" title="6.jQuery事件"></a>6.jQuery事件</h4><p>这部分分为鼠标事件、表单事件、键盘事件、事件的绑定和解绑、事件对象的使用和自定义事件几个部分。</p>
+<h5 id="1）鼠标事件"><a href="#1）鼠标事件" class="headerlink" title="1）鼠标事件"></a>1）鼠标事件</h5><p><strong>1.click和dbclick事件</strong></p>
+<p>点击和双击</p>
+<p><strong>2.mousedown和mouseup事件</strong></p>
+<p>鼠标按下和鼠标弹起</p>
+<p><strong>3.mousemove事件</strong></p>
+<p>鼠标移动</p>
+<p><strong>4.mouseover和mouseout事件</strong></p>
+<p>鼠标移入和鼠标移出</p>
+<p><strong>5.mouseenter和mouseleave事件</strong></p>
+<p>鼠标移到元素内部和元素外部</p>
+<p><strong>6.hover事件</strong></p>
+<p>鼠标进入元素时触发离开时执行另一个</p>
+<p><strong>7.focusin事件</strong></p>
+<p>点击聚焦</p>
+<p>支持冒泡处理</p>
+<p><strong>8.focusout事件</strong></p>
+<p>失去聚焦</p>
+<h5 id="2）表单事件"><a href="#2）表单事件" class="headerlink" title="2）表单事件"></a>2）表单事件</h5><p><strong>1.blur和focus事件</strong></p>
+<p>处理焦点，不支持冒泡</p>
+<p><strong>2.change事件</strong></p>
+<p>input元素，textarea和select元素的值都是可以发生改变的，开发者可以通过change事件去监听这些改变的动作。</p>
+<p><strong>3.select事件</strong></p>
+<p>当 textarea 或文本类型的 input 元素中的文本被选择时，会发生 select 事件。</p>
+<p><strong>4.submit事件</strong></p>
+<p>提交表单</p>
+<h5 id="3）键盘事件"><a href="#3）键盘事件" class="headerlink" title="3）键盘事件"></a>3）键盘事件</h5><p><strong>1.keydown()和keyup()事件</strong></p>
+<p>当在一个元素第一次按下键盘上字母键和松开时就会触发</p>
+<p><strong>2.keypress()事件</strong></p>
+<p>用来接收字母数字等ANSI字符。</p>
+<h5 id="4）事件的绑定和解绑"><a href="#4）事件的绑定和解绑" class="headerlink" title="4）事件的绑定和解绑"></a>4）事件的绑定和解绑</h5><p><strong>1.on()的多事件绑定</strong></p>
+<p><strong>2.on()的高级用法</strong></p>
+<p><strong>3.off()卸载事件</strong></p>
+<h5 id="5）事件对象的使用"><a href="#5）事件对象的使用" class="headerlink" title="5）事件对象的使用"></a>5）事件对象的使用</h5><p><strong>1.事件对象的作用</strong></p>
+<p><strong>2.事件对象的属性和方法</strong></p>
+<h5 id="6）自定义事件"><a href="#6）自定义事件" class="headerlink" title="6）自定义事件"></a>6）自定义事件</h5><p><strong>1.trigger事件</strong></p>
+<p>根据绑定到匹配元素的给定的事件类型执行所有的处理程序和行为</p>
+<p><strong>2.triggerHandler事件</strong></p>
+<p>triggerHandler与trigger的用法是一样的，重点看不同之处：</p>
+<ul>
+<li>triggerHandler不会触发浏览器的默认行为，.triggerHandler( “submit” )将不会调用表单上的.submit()</li>
+<li>.trigger() 会影响所有与 jQuery 对象相匹配的元素，而 .triggerHandler() 仅影响第一个匹配到的元素</li>
+<li>使用 .triggerHandler() 触发的事件，并不会在 DOM 树中向上冒泡。 如果它们不是由目标元素直接触发的，那么它就不会进行任何处理</li>
+<li>与普通的方法返回 jQuery 对象(这样就能够使用链式用法)相反，.triggerHandler() 返回最后一个处理的事件的返回值。如果没有触发任何事件，会返回 undefined</li>
+</ul>
+<h4 id="7-jQuery动画"><a href="#7-jQuery动画" class="headerlink" title="7.jQuery动画"></a>7.jQuery动画</h4><h5 id="1）隐藏和显示"><a href="#1）隐藏和显示" class="headerlink" title="1）隐藏和显示"></a>1）隐藏和显示</h5><p><strong>1.隐藏</strong>$elem.hide()</p>
+<p>.hide( options )</p>
+<p>当提供hide方法一个参数时，.hide()就会成为一个动画方法。.hide()方法将会匹配元素的宽度，高度，以及不透明度，同时进行动画操作</p>
+<p>.hide(“fast / slow”)</p>
+<p>这是一个动画设置的快捷方式，’fast’ 和 ‘slow’ 分别代表200和600毫秒的延时，就是元素会执行200/600毫秒的动画后再隐藏</p>
+<p><strong>2.显示</strong>$elem.show()</p>
+<p>使用上和hide一致，作用相反。</p>
+<p><strong>3.显示和隐藏切换toggle方法</strong></p>
+<ul>
+<li>如果元素是最初显示，它会被隐藏</li>
+<li>如果隐藏的，它会显示出来</li>
+</ul>
+<h5 id="2）上卷下拉效果"><a href="#2）上卷下拉效果" class="headerlink" title="2）上卷下拉效果"></a>2）上卷下拉效果</h5><p><strong>1.下拉动画slideDown</strong></p>
+<p>对于隐藏的元素，在将其显示出来的过程中，可以对其进行一些变化的动画效果。</p>
+<p><strong>2.上卷动画slideUp</strong></p>
+<p>对于显示的元素，在将其隐藏的过程中，可以对其进行一些变化的动画效果。</p>
+<p><strong>3.上卷下拉切换slideToggle</strong></p>
+<h5 id="3）淡入淡出效果"><a href="#3）淡入淡出效果" class="headerlink" title="3）淡入淡出效果"></a>3）淡入淡出效果</h5><p><strong>1.淡出动画fadeOut</strong></p>
+<p>设置透明度逐渐为0.</p>
+<p><strong>2.淡入动画fadeIn</strong></p>
+<p>透明度逐渐从0到1.</p>
+<p><strong>3.淡入淡出切换fadeToggle</strong></p>
+<p><strong>4.淡入效果fadeTo</strong></p>
+<p>设置透明度为指定，比如0.5</p>
+<h5 id="4）jquery核心"><a href="#4）jquery核心" class="headerlink" title="4）jquery核心"></a>4）jquery核心</h5><p><strong>1.each方法的应用</strong></p>
+<p><strong>2.查找数组中的索引inArray</strong></p>
+<p><strong>3.去空格神器trim方法</strong></p>
+<p><strong>4.DOM元素的获取get方法</strong></p>
+<p><strong>5.DOM元素的获取index方法</strong></p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2017-04-08T09:19:33.977Z" itemprop="datePublished">2017-04-08</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【jQuery】jQuery基础学习" data-title="【jQuery】jQuery基础学习" data-url="http://yoursite.com/2017/04/08/【jQuery】jQuery基础学习/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://gss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/d31b0ef41bd5ad6e9546d4d688cb39dbb6fd3c4a.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球JoseyDon♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
