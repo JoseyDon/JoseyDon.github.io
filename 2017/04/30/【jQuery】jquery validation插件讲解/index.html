@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>【jQuery】jquery validation插件讲解 | ♥毛球JoseyDon♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球JoseyDon♥的博客">
+	<img src="/favicon.png" alt="♥毛球JoseyDon♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/11/%E3%80%90css%E3%80%91css%E4%B8%AD%E4%BD%BF%E7%94%A8em/" target="_blank">【css】css中使用em</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JaveScript%E3%80%91JavaScript%E5%85%A5%E9%97%A8%E7%AF%87/" target="_blank">【JaveScript】JavaScript入门篇</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JavaScript%E3%80%91%E4%BA%8B%E4%BB%B6/" target="_blank">【JavaScript】事件</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/02/22/%E3%80%90JavaScript%E3%80%91JavaScript%E5%AE%9E%E4%BE%8B/" target="_blank">【JavaScript】JavaScript实例</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90javascript%E3%80%91%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" target="_blank">【javascript】用javascript实现动画效果</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90Javascript%E3%80%91CSS-DOM/" target="_blank">【javascript】CSS-DOM</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91%E8%BD%AE%E6%92%AD%E5%9B%BE%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" target="_blank">【Javascript】轮播图实现原理</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91UI%E7%BB%84%E4%BB%B6%E4%B9%8B%E6%8E%92%E5%BA%8F%E8%A1%A8%E6%A0%BC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">【Javascript】UI组件之排序表格学习笔记</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【jQuery】jquery validation插件讲解
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>学习时间：2017.4.26-2017.4.30</p>
+<p>参考资料：<a href="http://www.imooc.com/learn/385" target="_blank" rel="external">http://www.imooc.com/learn/385</a></p>
+<h4 id="基本验证方法"><a href="#基本验证方法" class="headerlink" title="基本验证方法"></a>基本验证方法</h4><p>required：必填</p>
+<p>remote：远程校验</p>
+<p>minlength：最小 长度</p>
+<p>maxlength：最大长度</p>
+<p>rangelength：长度范围</p>
+<p>min：最小值</p>
+<p>max：最大值</p>
+<p>range：值范围</p>
+<p>email：email格式</p>
+<p>url：url格式</p>
+<p>date：日期</p>
+<p>dateISO：ISO日期</p>
+<p>number：数字</p>
+<p>digits：整数</p>
+<p>equalTo与另一个元素值相等</p>
+<p>remote：默认get，可以传递json、文字等</p>
+<p>同时remote还有一些属性 //没有成功</p>
+<p>url</p>
+<p>type:可以修改成POST</p>
+<p>Data：数据里面可以先登录时间，loginTime:function(){return + new Date;}这个技巧可以将字符串转换成数字。</p>
+<p>rangelength:[最小值,最大值]</p>
+<p>注意min和max说的是值，如果这个值是数字，输入字符的话会提示请输入数字。</p>
+<p>如果需要的是email，则email:true</p>
+<p>url也是一样的</p>
+<p>date日期，如果输入的时期是有效的，才能通过，能被Date. parse方法识别都能通过。</p>
+<p>由于date校验方法十分广泛，有一个dateISO标准日期格式校验，必须是yyyy-mm-dd或者yyyy/mm/dd这种形式。</p>
+<p>number:只能是数字，可以使负数，小数</p>
+<p>digits:只能是非负整数</p>
+<p>equalTo:这各常用的地方是确认密码时。</p>
+<h4 id="高级API"><a href="#高级API" class="headerlink" title="高级API"></a>高级API</h4><p>valid()方法：检查表单或某些元素是否有效</p>
+<p>rules()方法：获取表单元素的校验规则</p>
+<p>rules(“add”,rules)向表单元素添加校验规则</p>
+<p>rules(“remove”,rules)删除表单元素校验规则</p>
+<p>这里注意rules只能针对子元素</p>
+<h4 id="validator对象"><a href="#validator对象" class="headerlink" title="validator对象"></a>validator对象</h4><p>validate方法返回validator对象，validator对象有很多有用的方法。</p>
+<p>Validator.form()验证表单是否有效，返回true or false</p>
+<p>Validator.element(element) 验证某个元素是否有效，返回true/false</p>
+<p>Validator.resetForm()把表单恢复到验证前原来的状态</p>
+<p>Validator.showErrors(errors)针对某个元素显示特定的错误信息</p>
+<p>Validator.numberOfInvalids() 返回无效的元素数量</p>
+<p>浏览器控制台换行shift+enter</p>
+<h4 id="validator对象还有很多静态方法，不需要捕获，直接使用。"><a href="#validator对象还有很多静态方法，不需要捕获，直接使用。" class="headerlink" title="validator对象还有很多静态方法，不需要捕获，直接使用。"></a>validator对象还有很多静态方法，不需要捕获，直接使用。</h4><p>jquery.validator.addMethod(name,method[,message]) 增加自定义的验证方法</p>
+<p>jQuery.validator.format(template,argument,argumentN…)格式化字符串</p>
+<p>jQuery.validator.setDefaults(options) 修改插件默认设置</p>
+<p>jQuery.validator.addClassRules(name,rules)为某些包含名为name的class增加组合验证类型</p>
+<h4 id="validate-方法配置项"><a href="#validate-方法配置项" class="headerlink" title="validate()方法配置项"></a>validate()方法配置项</h4><p>submitHandler 通过验证后运行的函数，可以加上表单提交方法</p>
+<p>submitHandler :function(form){console.log($(form).serialize())}</p>
+<p>invalidHandler 无效表单运行后触发的函数</p>
+<p>invalidHandler :function(event,validator){console.log($(form).serialize())}</p>
+<p> ignore 对某些元素不进行验证</p>
+<p>rules 定义校验规则</p>
+<p>每个规则都可以用depends判断条件</p>
+<p>本身有参数的话加上param传递参数即可。</p>
+<p>messages定义提示信息</p>
+<p>groups 对一组元素的验证，用一个错误提示信息，用errorPlacement控制把出错信息放在哪里。</p>
+<p>validate()方法配置项</p>
+<p>onsubmit 是否在提交时验证</p>
+<p>onfocusout 是否在获取焦点时验证</p>
+<p>onkeyup 是否在敲击键盘时验证</p>
+<p>onclick 是否在鼠标点击时验证 一般用于checkbox或者radio</p>
+<p>focusInvalid 提交表单后，未通过的表单是否获得焦点</p>
+<p>focusCleanup 当未通过的验证元素获得焦点时，是否移除错误信息</p>
+<p>errorClass 指定错误提示的css类名，可以自定义错误提示的样式</p>
+<p>validClass 指定验证通过的css类名</p>
+<p>errorElement 使用什么标签标记错误</p>
+<p>wrapper 使用什么标签把上面的errorElement包起来</p>
+<p>errorLabelContainer 把错误信息统一放在一个容器中</p>
+<p>errorContainer 显示或者隐藏验证信息，可以自动实现有错误信息出现时把容器属性变成显示，无错时隐藏。</p>
+<p>showErrors 可以显示总共多少个未通过验证的元素</p>
+<p>errorPlacement 自定义错误信息放到哪里</p>
+<p>success 要验证的元素通过验证后的动作</p>
+<p>highlight 可以给未通过的元素加效果</p>
+<p>unhighlight 去除未通过验证的元素的效果</p>
+<h4 id="选择器扩展"><a href="#选择器扩展" class="headerlink" title="选择器扩展"></a>选择器扩展</h4><p>:blank 选择所有值为空的元素</p>
+<p>:filled 选择所有值不为空的元素</p>
+<p>:unchecked 选择所有没有被选择的元素</p>
+<h4 id="自定义验证方法"><a href="#自定义验证方法" class="headerlink" title="自定义验证方法"></a>自定义验证方法</h4><p>jQuery.validator.addMethod(name,method[,message]) </p>
+<p>name:方法名称</p>
+<p>method:function(value,element,params)</p>
+<p>message:提示信息</p>
+<p>additional-methods.js 包含了很多扩展验证方法</p>
+<p>可以参考这个库</p>
+<h4 id="客户端校验安全性"><a href="#客户端校验安全性" class="headerlink" title="客户端校验安全性"></a>客户端校验安全性</h4><p>在数据被输入程序前必须对数据合法性的检验，非法输入问题是最常见的web应用程序安全漏洞</p>
+<p>所有提交的表单数据，都必须验证两次，即提交前在客户端验证，提交后在服务器端再次验证，保证数据的合法性。</p>
+<p>服务器端不要相信任何的客户端数据。</p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2017-04-30T15:15:57.238Z" itemprop="datePublished">2017-04-30</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【jQuery】jquery validation插件讲解" data-title="【jQuery】jquery validation插件讲解" data-url="http://yoursite.com/2017/04/30/【jQuery】jquery validation插件讲解/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://gss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/d31b0ef41bd5ad6e9546d4d688cb39dbb6fd3c4a.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球JoseyDon♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
