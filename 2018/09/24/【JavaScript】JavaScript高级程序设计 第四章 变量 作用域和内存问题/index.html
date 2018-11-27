@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>【JavaScript】JavaScript高级程序设计 第四章 变量 作用域和内存问题 | ♥毛球Josey♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球Josey♥的博客">
+	<img src="/favicon.png" alt="♥毛球Josey♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/11/%E3%80%90css%E3%80%91css%E4%B8%AD%E4%BD%BF%E7%94%A8em/" target="_blank">【css】css中使用em</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JaveScript%E3%80%91JavaScript%E5%85%A5%E9%97%A8%E7%AF%87/" target="_blank">【JaveScript】JavaScript入门篇</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JavaScript%E3%80%91%E4%BA%8B%E4%BB%B6/" target="_blank">【JavaScript】事件</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/02/22/%E3%80%90JavaScript%E3%80%91JavaScript%E5%AE%9E%E4%BE%8B/" target="_blank">【JavaScript】JavaScript实例</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90javascript%E3%80%91%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" target="_blank">【javascript】用javascript实现动画效果</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90Javascript%E3%80%91CSS-DOM/" target="_blank">【javascript】CSS-DOM</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91%E8%BD%AE%E6%92%AD%E5%9B%BE%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" target="_blank">【Javascript】轮播图实现原理</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91UI%E7%BB%84%E4%BB%B6%E4%B9%8B%E6%8E%92%E5%BA%8F%E8%A1%A8%E6%A0%BC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">【Javascript】UI组件之排序表格学习笔记</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【JavaScript】JavaScript高级程序设计 第四章 变量 作用域和内存问题
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>4.1基本类型和引用类型的值</p>
+<p>ECMAScript变量可能包含两种不同数据类型的值 基本类型值 和 引用类型</p>
+<p>值。</p>
+<p>基本类型值：简单的数据段</p>
+<p>引用类型值：可能由多个值构成的对象</p>
+<p>将一个值赋给变量时，解析器必须确定这个值是基本数据类型还是引用类型。</p>
+<p>基本数据类型：按值访问，可以操作保存在变量中的实际的值。</p>
+<p>引用类型的值：按引用访问<br>4.1.1动态的属性</p>
+<p>对于引用类型的值可以添加、修改和删除属性和方法，不能给基本类型的值添加属性（但不会报错，undefined）</p>
+<p>4.1.2复制变量值</p>
+<p>复制基本类型的值：在变量对象上创建一个新值，然后把该值复制到为新变量分配的位置上。</p>
+<p>复制引用类型的值：复制是一个指针，指向同一个对象。所以改变其中一个变量就会影响另一个变量。</p>
+<p>4.1.3传递参数</p>
+<p>ECMAScript中所有函数的参数都是按值传递：把函数外部的值复制给函数内部的参数。</p>
+<p>传递基本类型的值：被传递的值会复制给一个局部变量（即命名参数，也就是arguments对象中的一个元素）</p>
+<p>传递引用类型的值：把被传递的值在内存中的地址复制给一个局部变量。因此这个局部变量的变化会反映在函数的外部</p>
+<p>提示：可以把ECMAScript函数的参数想象成局部变量</p>
+<p>4.1.4检测类型</p>
+<p>检查基本数据类型：typeof操作符</p>
+<p>检测引用类型的值：instanceof操作符</p>
+<p>4.2执行环境及作用域</p>
+<p>执行环境：定义变量或函数有权访问的其他数据，决定了它们各自的行为。</p>
+<p>变量对象：每个执行环境都有的一个变量对象，保存环境中定义的所有变量和函数。代码无法访问，解析器会使用。</p>
+<p>全局执行环境：最外围的一个执行环境。在web浏览器中是window对象。</p>
+<p>函数的执行环境：每个函数都有自己的执行环境。当执行流进入一个函数时，函数的环境就会被推入一个环境栈中。而在函数执行之后，栈将其环境弹出，把控制权返回给之前的执行环境。</p>
+<p>作用域链：保证对执行环境有权访问的所有变量和函数的有序访问。</p>
+<p>作用域链的前端始终是当前环境的变量对象。（如果这个变量是函数，将它活动对象作为变量对象）（活动对象在最开始只包含arguments对象）</p>
+<p>作用域链中下一个变量对象来自于外部环境，在下一个为下一个外部环境……</p>
+<p>作用域链的最后一个对象始终是全局执行环境的变量对象。</p>
+<p>标识符解析：沿这作用域链一级一级地搜索标识符的过程。从作用域链最前端开始逐级向后回溯直到找到标识符。</p>
+<p>内部环境可以通过作用域链访问所有的外部环境，但外部环境不能访问内部环境中的任何变量和函数。</p>
+<p>4.2.1延长作用域链</p>
+<p>try-catch语句的catch块和with语句可以在作用域链的前端临时增加一个变量对象，该变量对象会在代码执行后被移除。</p>
+<p>catch语句：创建一个新的变量对象，包含被抛出的错误对象的声明。</p>
+<p>with语句：将指定的对象添加到作用域链中。</p>
+<p>4.2.2没有块级作用域</p>
+<p>js中，if语句for语句中的变量声明会将变量添加到当前的执行环境中。</p>
+<p>声明变量</p>
+<p>使用var声明的变量会自动被添加到最接近的环境中</p>
+<p>没使用var声明该变量会自动被添加到全局环境中</p>
+<p>提示：1.不声明而直接初始化变量是一个常见的错误做法，在严格模式下会报错</p>
+<p>查询标识符</p>
+<p>搜索过程从作用域的前端开始，向上逐级查询与给定名字匹配的标识符</p>
+<p>如果局部环境存在同名标识符，就不会使用位于父环境中的标识符</p>
+<p>提示：1.访问局部变量要比访问全局变量快，因为不用向上搜索作用域链。js引擎优化标识符查询使这个差别可以忽略不计。</p>
+<p>4.3垃圾收集</p>
+<p>执行环境负责管理代码执行过程中使用的内存</p>
+<p>原理：找出不再使用的变量释放其占用的内存</p>
+<p>垃圾收集器会按照固定的时间间隔周期性的执行</p>
+<p>垃圾收集器必须跟踪哪个变量有用哪个变量没用，对不再有用的变量打上标记。</p>
+<p>标识方式：1.标记清除 2.引用计数</p>
+<p>4.3.1标记清除</p>
+<p>最常用</p>
+<p>当变量进入环境时标记为“进入环境”，离开环境时标记为“离开环境”。</p>
+<p>垃圾收集器在运行时给内存中所有变量打上标记，然后去掉环境中的变量以及被环境中的变量引用的变量的标记。这时仍有标记的变量为准备删除的变量。最后垃圾收集器完成内存清除工作，销毁带标记的值并回收内存空间。</p>
+<p>4.3.2引用计数</p>
+<p>不常见</p>
+<p>跟踪记录每个值被引用的次数。</p>
+<p>4.3.3性能问题</p>
+<p>垃圾收集器是周期性运行。</p>
+<p>垃圾收集例程回收的内存分配量低于15%，则变量字面量数组元素的临界值就会加倍。</p>
+<p>提示：有的浏览器可以出发垃圾收集过程但不推荐。</p>
+<p>4.3.4管理内存</p>
+<p>优化内存：不用的数据设置为null来释放引用（解除引用）。局部变量会在离开执行环境时自动被解除引用。</p>
+<p>解除一个值的引用并不意味着自动回收该值所占的内存，而是让值脱离执行环境，以便垃圾收集器下次运行时将其回收。</p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2018-09-24T01:36:55.482Z" itemprop="datePublished">2018-09-24</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【JavaScript】JavaScript高级程序设计 第四章 变量 作用域和内存问题" data-title="【JavaScript】JavaScript高级程序设计 第四章 变量 作用域和内存问题" data-url="http://yoursite.com/2018/09/24/【JavaScript】JavaScript高级程序设计 第四章 变量 作用域和内存问题/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://s1.ax1x.com/2018/11/27/FVZTmD.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球Josey♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>

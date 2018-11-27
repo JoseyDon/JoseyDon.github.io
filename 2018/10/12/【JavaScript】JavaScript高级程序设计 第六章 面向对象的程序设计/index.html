@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>【JavaScript】JavaScript高级程序设计 第六章 面向对象的程序设计 | ♥毛球Josey♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球Josey♥的博客">
+	<img src="/favicon.png" alt="♥毛球Josey♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/11/%E3%80%90css%E3%80%91css%E4%B8%AD%E4%BD%BF%E7%94%A8em/" target="_blank">【css】css中使用em</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JaveScript%E3%80%91JavaScript%E5%85%A5%E9%97%A8%E7%AF%87/" target="_blank">【JaveScript】JavaScript入门篇</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JavaScript%E3%80%91%E4%BA%8B%E4%BB%B6/" target="_blank">【JavaScript】事件</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/02/22/%E3%80%90JavaScript%E3%80%91JavaScript%E5%AE%9E%E4%BE%8B/" target="_blank">【JavaScript】JavaScript实例</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90javascript%E3%80%91%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" target="_blank">【javascript】用javascript实现动画效果</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90Javascript%E3%80%91CSS-DOM/" target="_blank">【javascript】CSS-DOM</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91%E8%BD%AE%E6%92%AD%E5%9B%BE%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" target="_blank">【Javascript】轮播图实现原理</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91UI%E7%BB%84%E4%BB%B6%E4%B9%8B%E6%8E%92%E5%BA%8F%E8%A1%A8%E6%A0%BC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">【Javascript】UI组件之排序表格学习笔记</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【JavaScript】JavaScript高级程序设计 第六章 面向对象的程序设计
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>面向对象的语言的标志：有类的概念，通过类创建任意多个具有相同属性和方法的对象。</p>
+<p>ECMAScript没有类的概念，因此它的对象和基于类语言的对象有所不同。</p>
+<p>ECMAScript的对象：“散列表” 一组名值对，值可以使数据或者函数。基于引用类型创建，这个引用类型可以是原生类型，也可以是自定义的类型。</p>
+<p>6.1理解对象</p>
+<p>创建自定义对象的方法：①创建一个object实例，再为它添加属性和方法 ②对象字面量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*创建对象*/</span></div><div class="line"></div><div class="line"><span class="comment">//创建object实例，再为它添加属性和方法</span></div><div class="line"><span class="keyword">var</span> person = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">person.name = <span class="string">'JoseyDon'</span>;</div><div class="line">person.age = <span class="number">20</span>;</div><div class="line">person.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//对象字面量</span></div><div class="line"><span class="keyword">var</span> person = &#123;</div><div class="line">	<span class="attr">name</span>:<span class="string">'JoseyDon'</span>,</div><div class="line">	<span class="attr">age</span>:<span class="number">20</span>,</div><div class="line"></div><div class="line">	<span class="attr">sayName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.name);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>6.1.1属性类型</p>
+<p>ECMAScript中有两种属性：①数据属性 ②访问器属性</p>
+<p>①数据属性：包含一个数据值的位置，在这个位置可以读取和写入值。有四个特性（描述该属性行为）。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特性</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">（直接在对象上定义的属性）默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">[[Configurable]]</td>
+<td style="text-align:center">能否通过delete删除属性从而重新定义属性，能否修改属性的特性，能否把属性修改为访问器属性</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td style="text-align:center">[[Enumerable]]</td>
+<td style="text-align:center">能否通过for-in循环返回属性</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td style="text-align:center">[[Writable]]</td>
+<td style="text-align:center">能否修改属性的值</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td style="text-align:center">[[Value]]</td>
+<td style="text-align:center">包含这个属性的数据值</td>
+<td style="text-align:center">undefined（任何）</td>
+</tr>
+</tbody>
+</table>
+<p>修改属性默认的特性：Object.defineProperty(属性所在对象,属性名字,描述符对象);其中描述符对象的属性必须是configurable、enumerable、writable和value。</p>
+<p>在调用该方法创建一个新属性时，如果不指定，configurable、enumerable、writable的值都是false。</p>
+<p>②访问器属性：不包含数据值；包含一对不必需的getter和setter函数；有四个特性。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">特性</th>
+<th style="text-align:center">作用</th>
+<th style="text-align:center">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">[[Configurable]]</td>
+<td style="text-align:center">能否通过delete删除属性从而重新定义属性，能否修改属性的特性，能否把属性修改为访问器属性</td>
+<td style="text-align:center">（直接在对象上定义的属性）true</td>
+</tr>
+<tr>
+<td style="text-align:center">[[Enumerable]]</td>
+<td style="text-align:center">能否通过for-in循环返回属性</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td style="text-align:center">[[Get]]</td>
+<td style="text-align:center">在读取属性时调用的函数</td>
+<td style="text-align:center">undefined</td>
+</tr>
+<tr>
+<td style="text-align:center">[[Set]]</td>
+<td style="text-align:center">在写入属性时调用的函数</td>
+<td style="text-align:center">undefined</td>
+</tr>
+</tbody>
+</table>
+<p>访问器属性不能直接定义，必须使用Object.defineProperty()来定义</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*修改属性默认的特性*/</span></div><div class="line"></div><div class="line"><span class="comment">/*数据属性*/</span></div><div class="line"><span class="comment">//第三个参数必须是包含configurable、enumerable、writable和value其中一个或多个的描述符对象</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> person = &#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.defineProperty(person,<span class="string">"name"</span>,&#123;</div><div class="line">	<span class="attr">writable</span>: <span class="literal">false</span>,</div><div class="line">	<span class="attr">value</span>: <span class="string">"Jsoeydon"</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//一旦把属性定义为不可配置，就不能再把它变回可配置的了</span></div><div class="line"><span class="built_in">Object</span>.defineProperty(person,<span class="string">"name"</span>,&#123;</div><div class="line">	<span class="attr">configurable</span>: <span class="literal">false</span>,</div><div class="line">	<span class="attr">value</span>: <span class="string">"Jsoeydon"</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">/*访问器属性*/</span></div><div class="line"><span class="keyword">var</span> book = &#123;</div><div class="line">	<span class="attr">_year</span>: <span class="number">2004</span>,</div><div class="line">	<span class="attr">edition</span>: <span class="number">1</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.defineProperty(book,<span class="string">'year'</span>,&#123;</div><div class="line">	<span class="attr">get</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">this</span>._year;</div><div class="line">	&#125;,</div><div class="line">	<span class="attr">set</span>:<span class="function"><span class="keyword">function</span>(<span class="params">newValue</span>)</span>&#123;</div><div class="line">		<span class="keyword">if</span> (newValue&gt;<span class="number">2004</span>) &#123;</div><div class="line">			<span class="keyword">this</span>._year = newValue;</div><div class="line">			<span class="keyword">this</span>.edition += newValue - <span class="number">2004</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//_year前面的下划线是一种常用的记号，用于表示只能通过对象方法访问的属性。</span></div><div class="line"><span class="comment">//使用访问器属性的常见方式：设置一个属性的值会导致其他属性发生变化。</span></div><div class="line"><span class="comment">//只指定getter：属性不能写 严格模式下不能只指定getter</span></div><div class="line"><span class="comment">//只指定setter：属性不能读 非严格模式返回undefined 严格模式下出错</span></div></pre></td></tr></table></figure>
+<p>6.1.2定义多个属性</p>
+<p>Object.defineProperties(要改变其属性的对象，属性)：通过描述符一次定义多个属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*定义多个属性*/</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> book = &#123;&#125;;</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.defineProperties(book,&#123;</div><div class="line">	<span class="attr">_year</span>: &#123;</div><div class="line">		<span class="attr">writable</span>: <span class="literal">true</span>,</div><div class="line">		<span class="attr">value</span>:<span class="number">2004</span></div><div class="line">	&#125;,</div><div class="line">	<span class="attr">edition</span>: &#123;</div><div class="line">		<span class="attr">writable</span>: <span class="literal">true</span>,</div><div class="line">		<span class="attr">value</span>: <span class="number">1</span></div><div class="line">	&#125;,</div><div class="line">	<span class="attr">year</span>: &#123;</div><div class="line">		<span class="attr">get</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">this</span>._year;</div><div class="line">		&#125;,</div><div class="line">		<span class="attr">set</span>: <span class="function"><span class="keyword">function</span>(<span class="params">newValue</span>)</span>&#123;</div><div class="line">			<span class="keyword">if</span> (newValue&gt;<span class="number">2004</span>) &#123;</div><div class="line">				<span class="keyword">this</span>._year = newValue;</div><div class="line">				<span class="keyword">this</span>.edition += newValue <span class="number">-2004</span>;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>6.1.3读取属性的特性</p>
+<p>Object.getOwnPropertyDescriptor(属性所在的对象，属性名称)：取得给定属性的描述符；返回值是一个对象。</p>
+<p>6.2创建对象</p>
+<p><img src="创建对象.png" alt=""></p>
+<p>6.2.1工厂模式</p>
+<p>用函数来封装以特定接口创建对象的细节</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*工厂模式*/</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">	o.name = name;</div><div class="line">	o.age = age;</div><div class="line">	o.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.name);</div><div class="line">	&#125;;</div><div class="line">	<span class="keyword">return</span> o;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = createPerson(<span class="string">'JoseyDon'</span>,<span class="number">20</span>);</div><div class="line"><span class="keyword">var</span> person2 = createPerson(<span class="string">'xiaohong'</span>,<span class="number">19</span>);</div></pre></td></tr></table></figure>
+<p>6.2.2构造函数模式</p>
+<p>像Object和Array这样的原生构造函数，在运行时会自动出现在执行环境中。</p>
+<p>也可以创建自定义的构造函数，从而定义自定义对象类型的属性和方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*构造函数模式*/</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.name);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person(<span class="string">"JoseyDon"</span>,<span class="number">20</span>);</div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person(<span class="string">"xiaohong"</span>,<span class="number">19</span>);</div></pre></td></tr></table></figure>
+<p>与工厂模式的区别：1.没有显示地创建对象 2.直接将属性和方法赋给了this对象 3.没有return语句</p>
+<p>惯例：构造函数始终都以一个大写字母开头，非构造函数则以一个小写字母开头</p>
+<p>用构造函数创建对象经历的步骤：1.创建一个新对象 2.将构造函数的作用域赋给新对象（this指向新对象）3.执行构造函数中的代码（为对象添加属性和方法） 4.返回新对象</p>
+<p>上述代码中，创建的两个对象都有construction（构造函数）属性，该属性指向Person。</p>
+<p>这两个对象既是Object的实例，又是Person的实例。（通过instanceof操作符检测数据类型）</p>
+<p>创建自定义的构造函数意味着将来可以将它的实例标识为一种特定的属性。</p>
+<p>构造函数和其他函数的唯一区别在于调用它们的方式不同。所以构造函数也可以当做普通函数来使用。普通函数通过new操作符来调用就可以作为构造函数。</p>
+<p>构造函数创建对象的缺点：每个方法都要在每个实例上重新创建一遍。</p>
+<p>6.2.3原型模式</p>
+<p>创建的每个函数都有一个prototype（原型）属性，这个属性是个指向一个对象的指针，这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法。</p>
+<p>prototype就是通过构造函数而创建的那个对象实例的原型对象。</p>
+<p>这种模式创建的对象实例可以共享它所包含的属性和方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*原型模式*/</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"></div><div class="line">Person.prototype.name = <span class="string">"JoseyDon"</span>;</div><div class="line">Person.prototype.age = <span class="number">20</span>;</div><div class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person1 = <span class="keyword">new</span> Person();</div><div class="line">person1.sayName(); <span class="comment">//JoseyDon</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> person2 = <span class="keyword">new</span> Person();</div><div class="line">person2.sayName();<span class="comment">//JoseyDon</span></div><div class="line"></div><div class="line">alert(person1.sayName == person2.sayName);<span class="comment">//true</span></div><div class="line"></div><div class="line"><span class="comment">//person1和person2访问的都是同一组属性和同一个sayName()函数</span></div></pre></td></tr></table></figure>
+<p>原型对象：</p>
+<p><img src="原型对象.png" alt=""></p>
+<p>读取某个对象的某个属性时，都会执行一次搜索，目标是具有给定名字的属性。</p>
+<p>对象实例——原型对象</p>
+<p>通过对象实例访问保存在原型中的值，但不能通过对象实例重写原型中的值。</p>
+<p>在实例中添加一个属性，而该属性与实例原型中的一个属性同名，那么就会在实例中创建该属性，该属性将会屏蔽原型中的那个属性。</p>
+<p>添加与原型对象同名的属性只会阻止我们访问原型中的那个属性，但不会修改那个属性。</p>
+<p>使用delete操作符可以完全删除实例属性。</p>
+<p>检查属性存在于实例中还是原型中：</p>
+<p>obj.hasOwnProperty(“属性名”) //只有属性存在于实例对象时，才会返回true</p>
+<p>function hasPrototypeProperty(object,name){</p>
+<p>​    return !object.hasOwnProperty(name)&amp;&amp;(name in object);</p>
+<p>}//判断属性是否存在于原型对象中</p>
+<p>原型与in操作符：</p>
+<p>in操作符：通过对象能够访问给定属性时返回true，无论属性存在于实例对象还是原型对象中</p>
+<p>for-in循环：返回的是所有能够通过对象访问的、可枚举的属性。无论属性存在于实例对象还是原型对象中。屏蔽原型中不可枚举的属性。</p>
+<p>for-in循环会将实例对象中[[Enumerable]]为false的属性也访问到，要获取对象上所有可枚举的实例属性，Object.keys(对象)方法，返回包含所有可枚举属性的字符串数组。</p>
+<p>想获得所有实例属性，使用Object.getOwnPropertyName()</p>
+<p>重写原型对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//重写原型对象</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"></div><div class="line">Person.prototype = &#123;</div><div class="line">	<span class="attr">name</span>: <span class="string">'JoseyDon'</span>,</div><div class="line">	<span class="attr">age</span>: <span class="number">20</span>,</div><div class="line">	<span class="attr">sayName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.name);</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">//constructor属性不再指向Person，可以特意将它设置回来</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line"></div><div class="line">Person.prototype = &#123;</div><div class="line">  	<span class="attr">constructor</span>: Person,</div><div class="line">	<span class="attr">name</span>: <span class="string">'JoseyDon'</span>,</div><div class="line">	<span class="attr">age</span>: <span class="number">20</span>,</div><div class="line">	<span class="attr">sayName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.name);</div><div class="line">	&#125;</div><div class="line">&#125;;</div><div class="line"><span class="comment">//这种方式会导致它的[[Enumerable]]特性被设置为true</span></div></pre></td></tr></table></figure>
+<p>原型的动态性：</p>
+<p>由于在原型中查找值的过程是一次搜索，因此原型对象的修改能够立即从实例上反映出来。</p>
+<p>原生对象的原型：</p>
+<p>除了创建自定义类型，所有原生的引用类型（Object、Array、String等等）都是采用原生对象的模型创建的。</p>
+<p>原生对象的问题：</p>
+<p>所有实例在默认情况下都将取得相同的属性值。</p>
+<p>6.2.4组合使用构造函数模式和原型模式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*组合使用构造函数模式和原型模式*/</span></div><div class="line"></div><div class="line"><span class="comment">/*构造函数模式：定义实例属性（默认属性值可以自定义）</span></div><div class="line">原型模式：定义方法和共享的属性（不用多次创建相同的函数）*/</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.friends = [<span class="string">"xiaohong"</span>,<span class="string">"xiaolv"</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype = &#123;</div><div class="line">	<span class="attr">constructor</span>: Person,</div><div class="line">	<span class="attr">sayName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		alert(<span class="keyword">this</span>.name);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>6.2.5动态原型模式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*动态原型模式*/</span></div><div class="line"></div><div class="line"><span class="comment">/*通过检查某个应该存在的方法是否有效，来决定是否需要初始化原型*/</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">	<span class="comment">//属性</span></div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line"></div><div class="line">	<span class="comment">//方法</span></div><div class="line">	<span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">this</span>.sayName != <span class="string">"function"</span>) &#123;</div><div class="line">		Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			alert(<span class="keyword">this</span>.name);</div><div class="line">		&#125;;</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//只在sayName()方法不存在的情况下，才会将它添加到原型中。</span></div><div class="line"><span class="comment">//这段代码只会再初次调用够构造函数时才会执行。</span></div></pre></td></tr></table></figure>
+<p>6.2.6寄生构造函数模式<br>除了使用new操作符并把使用的包装函数叫做构造函数外，这个模式跟工厂模式其实是一模一样的。</p>
+<p>6.2.7稳妥构造函数模式</p>
+<p>稳妥对象：没有公共属性，而其方法也不引用this的对象。</p>
+<p>6.3继承</p>
+<p>6.3.1原型链</p>
+<p>基本思想：利用原型让一个引用类型继承另一个引用类型的属性和方法。</p>
+<p>实现原理：让原型对象等于另一个类型的实例。</p>
+<p><img src="原型链.png" alt=""></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*原型链*/</span></div><div class="line"></div><div class="line"><span class="comment">//父类</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.property = <span class="literal">true</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//父类的原型对象的函数</span></div><div class="line">SuperTyper.prototype.getSuperValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.property;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.subproperty = <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//继承</span></div><div class="line">SubType.prototype = <span class="keyword">new</span> SubType();</div><div class="line"></div><div class="line">SubType.prototype.getSubValue = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.subproperty</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> SubType()&#123;</div><div class="line">	alert(instance.getSuperValue());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在通过原型链实现继承的情况下，搜索过程就会沿着原型链继续向上：1）搜索SubType实例 2）搜索SubType.prototype 3）搜索SuperType.prototype</p>
+<p>注意事项：①所有引用类型默认都继承了Object，这个继承也是通过原型链实现的</p>
+<p>​                   ②确定原型和实例的关系 1）instancepf操作符 2）isPrototypeOf()方法</p>
+<p>​                   ③子类型在覆盖超类型中的某个方法或者添加超类型中不存在的方法时，给原型添加方法的代码一定要放在替换原型的语句之后。</p>
+<p>​                   ④通过原型链实现继承时，不能使用对象字面量创建原型方法。</p>
+<p>原型链的问题：①所有属性将会被共享</p>
+<p>​                           ②不能再不影响所有对象实例的情况下，给超类型的构造函数传递参数，</p>
+<p>6.3.2借用构造函数</p>
+<p>借用构造函数/伪造对象/经典继承</p>
+<p>基本思想：在子类型构造函数的内部调用超类型构造函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*借用构造函数*/</span></div><div class="line"></div><div class="line"><span class="comment">//父类</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.colors = [<span class="string">"red"</span>,<span class="string">"blue"</span>,<span class="string">"green"</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//子类</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//继承了SuperType()</span></div><div class="line">	SubType.call(<span class="keyword">this</span>);<span class="comment">//使用call()调用父类函数//apply()也可以</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType();</div><div class="line">instance1.colors.push(<span class="string">"black"</span>);</div><div class="line">alert(oinstance1.colors);<span class="comment">//"red,blue,green,black"</span></div><div class="line">alert(instance1.colors);</div><div class="line"></div><div class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType();</div><div class="line">alert(instance2.colors);<span class="comment">//"red,blue,green"//证明不是公用一个colors属性</span></div><div class="line"></div><div class="line"><span class="comment">/*在新创建的SubType实例的环境下调用SuperType构造函数，</span></div><div class="line">这样就会在新SubType对象上执行SuperType()函数中定义的所有对象的初始化代码。</div><div class="line">结果SubType的每个实例都会具有属于自己的colors属性的副本了。*/</div><div class="line"></div><div class="line"><span class="comment">//在子类型构造函数中向超类型构造函数传递参数</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="comment">//继承了超类型，还传递了参数</span></div><div class="line">	SuperType.call(<span class="keyword">this</span>,<span class="string">"JoseyDon"</span>);</div><div class="line"></div><div class="line">	<span class="comment">//实例属性</span></div><div class="line">	<span class="keyword">this</span>.age = <span class="number">20</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> instance = <span class="keyword">new</span> SubType()；</div><div class="line">alert(instance.name);</div><div class="line">alert(instance.age);</div><div class="line"><span class="comment">//为了确保父类构造函数不会重写子类型的属性，</span></div><div class="line"><span class="comment">//可以在调用超类型构造函数后，再添加应该在子类型中定义的属性</span></div></pre></td></tr></table></figure>
+<p>借用构造函数的问题：没有做到函数的复用。</p>
+<p>6.3.3组合继承</p>
+<p>组合继承/伪经典继承：将原型链和借用构造函数的技术组合到一块。</p>
+<p>基本思想：使用原型链实现对原型属性和方法的继承，使用借用构造函数实现对实例属性的继承。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*组合继承*/</span></div><div class="line"></div><div class="line"><span class="comment">//父类</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SuperType</span>(<span class="params">name</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.colors = [<span class="string">"red"</span>,<span class="string">"blue"</span>,<span class="string">"green"</span>];</div><div class="line">&#125;</div><div class="line"></div><div class="line">SuperType.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubType</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">	<span class="comment">//借用构造函数继承属性</span></div><div class="line">	SuperType.call(<span class="keyword">this</span>,name);</div><div class="line"></div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//原型链 继承方法</span></div><div class="line">SubType.prototype = <span class="keyword">new</span> SuperType();</div><div class="line">SubType.prototype.constructor = SubType;</div><div class="line">SubType.prototype.sayAge = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	alert(<span class="keyword">this</span>.age);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> instance1 = <span class="keyword">new</span> SubType(<span class="string">"JoseyDon"</span>,<span class="number">20</span>);</div><div class="line">instance1.colors.push(<span class="string">"black"</span>);</div><div class="line">alert(instance1.colors);<span class="comment">//"red,blue,green,black"</span></div><div class="line">instance1.sayName();<span class="comment">//JoseyDon</span></div><div class="line">instance1.sayAge();<span class="comment">//20</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> instance2 = <span class="keyword">new</span> SubType(<span class="string">"xiaohong"</span>,<span class="number">21</span>);</div><div class="line">alert(instance2.colors);<span class="comment">//"red,blue,green"</span></div><div class="line">instance2.sayName();<span class="comment">//xiaohong</span></div><div class="line">instance2.sayAge();<span class="comment">//21</span></div></pre></td></tr></table></figure>
+<p>6.3.4原型式继承</p>
+<p>6.3.5寄生式继承</p>
+<p>6.3.6寄生组合式继承</p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2018-10-11T23:08:30.991Z" itemprop="datePublished">2018-10-12</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【JavaScript】JavaScript高级程序设计 第六章 面向对象的程序设计" data-title="【JavaScript】JavaScript高级程序设计 第六章 面向对象的程序设计" data-url="http://yoursite.com/2018/10/12/【JavaScript】JavaScript高级程序设计 第六章 面向对象的程序设计/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://s1.ax1x.com/2018/11/27/FVZTmD.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球Josey♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>

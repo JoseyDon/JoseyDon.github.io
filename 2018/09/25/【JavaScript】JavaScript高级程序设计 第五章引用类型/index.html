@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>【JavaScript】JavaScript高级程序设计 第五章引用类型 | ♥毛球Josey♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球Josey♥的博客">
+	<img src="/favicon.png" alt="♥毛球Josey♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/11/%E3%80%90css%E3%80%91css%E4%B8%AD%E4%BD%BF%E7%94%A8em/" target="_blank">【css】css中使用em</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JaveScript%E3%80%91JavaScript%E5%85%A5%E9%97%A8%E7%AF%87/" target="_blank">【JaveScript】JavaScript入门篇</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JavaScript%E3%80%91%E4%BA%8B%E4%BB%B6/" target="_blank">【JavaScript】事件</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/02/22/%E3%80%90JavaScript%E3%80%91JavaScript%E5%AE%9E%E4%BE%8B/" target="_blank">【JavaScript】JavaScript实例</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90javascript%E3%80%91%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" target="_blank">【javascript】用javascript实现动画效果</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90Javascript%E3%80%91CSS-DOM/" target="_blank">【javascript】CSS-DOM</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91%E8%BD%AE%E6%92%AD%E5%9B%BE%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" target="_blank">【Javascript】轮播图实现原理</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91UI%E7%BB%84%E4%BB%B6%E4%B9%8B%E6%8E%92%E5%BA%8F%E8%A1%A8%E6%A0%BC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">【Javascript】UI组件之排序表格学习笔记</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【JavaScript】JavaScript高级程序设计 第五章引用类型
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>引用类型的值（对象）是引用类型的一个实例。</p>
+<p>引用类型被称为对象定义，描述一类对象所具有的属性和方法。</p>
+<p>新对象是使用new操作符后跟一个构造函数来创建的，构造函数本身就是一个函数。</p>
+<p>5.1Object类型</p>
+<p>创建Object实例的方式：1.使用new操作符后跟Object构造函数 2.使用字面量表示</p>
+<p>使用对象字面量定义对象：1.逗号分隔不同属性</p>
+<p>​                                              2.属性名也可以使用字符串</p>
+<p>​                                              3.留空其花括号，则可以定义只包括默认属性和方法的对象</p>
+<p>​                                              4.推荐只在考虑对象属性名的可读性时使用</p>
+<p>​                                              5.不会调用object构造函数</p>
+<p>​                                              6.向函数传递大量可选参数的首选方式</p>
+<p>访问对象属性：1.点表示法 2.方括号表示法</p>
+<p>提示：1.方括号中存放字符串 2.方括号能通过变量来访问属性 3.属性名可以包含空格 可以使用 方括号来访问 4.优先使用点表示法</p>
+<p>5.2array类型</p>
+<p>数组的每一项可以保存任何类型的数据。</p>
+<p>数组可以随着数据的添加自动增长。</p>
+<p>创建方式：1.使用Array构造函数。可选：给构造函数传递数量，成为length属性的值。</p>
+<p>​                                                                       给构造函数传递数组中应包含的项</p>
+<p>​                                                                       new操作符可以省略</p>
+<p>​                   2.使用数组字面量表示法[‘1’,’2’,’3’]  不会调用Array构造函数</p>
+<p>length属性：不是只读的。可以从数组的末尾移除项或向数组中添加新项。值为undefined</p>
+<p>5.2.1检测数组</p>
+<p>只有一个全局执行环境：instanceof</p>
+<p>最终确定是否是数组，不管在哪个全局执行环境中创建：Array.isArray()方法</p>
+<p>5.2.2转换方法</p>
+<p>所有对象都有的一些方法</p>
+<p>toString()：返回由数组中每个值的字符串形式拼接而成的一个以逗号分隔的字符串。</p>
+<p>valueOf()：返回数组</p>
+<p>*join()：使用不同的分隔符来构建这个字符串。不传值/传undefined =》分隔符为逗号</p>
+<p>数组中某一项值是null或者undefined，则返回的结果为空字符串</p>
+<p>5.2.3栈方法</p>
+<p>后进先出</p>
+<p>push()：末尾添加，返回新数组长度</p>
+<p>pop()：扔掉末尾项，返回被扔掉的项</p>
+<p>5.2.4队列方法</p>
+<p>先进先出</p>
+<p>shift()：扔掉最前面的元素，返回被扔掉的元素</p>
+<p>unshift()：开头添加，返回新数组长度 IE8之后 之前返回undefined</p>
+<p>5.2.5重排序方法</p>
+<p>reverse()：反转数组项的顺序</p>
+<p>sort()：调用每个数组项的toString()方法，比较字符串。</p>
+<p>​                可接收一个比较函数作为参数</p>
+<p>arr.sort(function(a,b){return a-b;//由小到大});</p>
+<p>5.2.6操作方法</p>
+<p>concat()：连接数组</p>
+<p>slice()：一个参数 返回指定位置到当前数组末尾的所有项</p>
+<p>​              两个参数 返回起始位置和结束为止之间的项（但不包括结束位置的项）</p>
+<p>​              不会影响到原始数组</p>
+<p>​               参数为负数 用数组长度加上该负数确定位置</p>
+<p>​                结束位置小于起始位置 返回空数组</p>
+<p>splice()：删除 两个参数 要删除的第一项的位置 要删除的项数</p>
+<p>​                 替换 三个参数 起始位置 要删除的项数 要插入的任意数量的项 后二者不必相等</p>
+<p>​                  添加 三个参数 起始位置 0 要插入的项</p>
+<p>​                  返回一个从原始数组删除的项（无删除返回空数组）</p>
+<p>5.2.7位置方法</p>
+<p>indexOf() 和 lastIndexOf() 两个参数 要查找的项 （可选）起点位置的索引</p>
+<p>没找到返回-1 查找时使用全等操作符===</p>
+<p>5.2.8迭代方法</p>
+<p>五个迭代方法 每个都是两个参数 1.每一项运行的函数 2.（可选）运行该函数的作用域对象（影响this值）</p>
+<p>每一项运行的函数会接收三个参数：1.数组项的值 2.该项在数组中的位置 3.数组对象本身</p>
+<p>every()：如果函数每一项返回true则返回true</p>
+<p>filter()：返回该函数会返回true的项组成的数组</p>
+<p>forEach()：没有返回值</p>
+<p>map()：返回每次函数调用的结果组成的数组</p>
+<p>some()：如果该函数对任意一项返回true，则返回true</p>
+<p>以上方法不会修改数组中所包含的值</p>
+<p>5.2.9归并方法</p>
+<p>reduce()：从第一项开始逐个遍历到最后</p>
+<p>ruduceRight()：从最后一项到第一项</p>
+<p>两个参数 1.每一项上调用的函数 2.（可选）作为归并基础的初始值</p>
+<p>每一项上调用的函数接受4个参数：1.前一个值 2. 当前值 3.项的索引 4.数组对象</p>
+<p>这个函数返回的值会作为第一个参数自动传给下一项。</p>
+<p>第一次迭代发生在数组的第二项上。</p>
+<p>5.3Date类型</p>
+<p>笔记本</p>
+<p>5.3.1继承的方法</p>
+<p>5.3.2日期格式化方法</p>
+<p>5.3.3日期/时间组件方法</p>
+<p>5.4RegExp类型</p>
+<p>5.4.1RegExp实例属性</p>
+<p>5.4.2RegExp实例方法</p>
+<p>5.4.3RegExp构造函数属性</p>
+<p>5.4.4模式的局限性</p>
+<p>5.5function类型</p>
+<p>函数是对象。函数名是指针。</p>
+<p>每个函数都是function类型的实例。</p>
+<p>函数名是一个指向函数对象的指针。</p>
+<p>函数末尾有一个分号，和声明其他变量时一样。</p>
+<p>使用不带圆括号的函数名是访问函数指针，而非调用函数。</p>
+<p>5.5.1没有重载（深入理解）</p>
+<p>在创建第二函数时，实际上是覆盖了引用第一个函数的变量。</p>
+<p>5.5.2函数声明与函数表达式</p>
+<p>解析器先读取函数声明，使其在执行任何代码前可用。</p>
+<p>函数表达式必须等到解析器执行到它所在的代码行才会被执行。</p>
+<p>函数声明提升：在代码开始执行之前，通过函数声明提升的过程，读取并将函数声明添加到执行环境。所以函数声明被顶到源代码树的顶部。</p>
+<p>5.5.3作为值的函数</p>
+<p>函数名本身就是变量，所以函数也可以当做值来使用。</p>
+<p>可以像传递参数一样把一个函数传递给另一个函数，也可以将一个函数作为另一个函数的结果返回。</p>
+<p>要访问函数的指针而不执行函数时，必须去掉函数名后的圆括号。</p>
+<p>5.5.4函数内部属性</p>
+<p>两个特殊对象：arguments和this</p>
+<p>arguments：类数组 包含着传入函数中的所有参数</p>
+<p>​                        属性：callee 指针 指向拥有这个arguments对象的函数 arguments.callee 严格模式出错</p>
+<p>this：指的是函数执行的环境对象</p>
+<p>ECMAScript5新增属性：caller 保存调用当前函数的函数的引用。如果是全局作用域调用当前函数，值为null</p>
+<p>​                                          不能为函数的caller属性赋值</p>
+<p>5.5.5函数属性和方法</p>
+<p>两个属性 1.length 2.prototype</p>
+<p>prototype：保存它们所有实例方法 不可枚举（for-in无法发现）</p>
+<p>两个方法：1.apply() 2.call()</p>
+<p>用途：都是在特定的作用域中调用函数，等于设置函数体内this对象的值</p>
+<p>apply() 两个参数：1.在其中运行函数的作用域 this 2.参数数组（Array实例/arguments对象）</p>
+<p>call() 两个参数 1.this值 2.传递给函数的参数必须逐个列举</p>
+<p>主要用途：扩充函数作用域 好处：对象不需要与方法有任何耦合关系</p>
+<p>ECMAScript5新增方法：bind() 创建一个对象实例，this值会被绑定传给bind()函数的值</p>
+<p>5.6基本包装类型</p>
+<p>每当读取一个基本类型值，后台会创建一个对应的基本包装类型的对象，让我们能调用一些方法来操作这些数据。</p>
+<p>过程：1.创建string类型/Boolean类型/Number类型的一个实例</p>
+<p>​            2.在实例上调用指定的方法</p>
+<p>​            3.销毁这个实例</p>
+<p>引用类型和基本包装类型的区别：对象的生存期。</p>
+<p>引用类型：在执行流离开当前作用域前都保存在内存中。</p>
+<p>基本包装类型：只存在于一行代码的执行瞬间，然后立即被销毁。</p>
+<p>5.6.1boolean类型</p>
+<p>5.6.2number类型</p>
+<p>5.6.3string类型</p>
+<p>String类型是字符串的对象包装类型</p>
+<p>访问特定字符：charAt() charCodeAt() stringValue[] 返回给定位置的字符</p>
+<p>拼接字符串：concat() 多个参数 不修改字符串本身的值</p>
+<p>创建新字符串：slice() 参数1:开始位置 参数2:子字符串最后一个字符后面的位置 无则末尾 不修改原值 负数长度减</p>
+<p>​                          substr() 参数一：开始位置 参数二：字符个数 无则末尾 不修改原值 负数转0返回空字符串</p>
+<p>​                          substring()参数一：开始位置 参数二最后一个字符后面的位置 无则末尾 不修改原值 负数转0</p>
+<p>查找子字符串：indexOf()和lastIndexOf() 没找到返回-1</p>
+<p>trim()：创建一个字符串副本，删除前置及后缀的所有空格 返回结果</p>
+<p>大小写转换：toLowerCase() toUpperCase()</p>
+<p>模式匹配方法：match()</p>
+<p>比较字符串：字符串.localeCompare(“字符串参数”)</p>
+<p>字符编码转换成字符串：fromCharCode()</p>
+<p>5.7单体内置对象</p>
+<p>不必显示实例化的内置对象（因为已经实例化了）</p>
+<p>例如Object、Array、String和Global及Math</p>
+<p>5.7.1Global对象</p>
+<p>这个对象不存在。</p>
+<p>不属于任何其他对象的属性和方法就是属于Global对象的属性和方法。</p>
+<p>所有在全局作用域中定义的属性和函数都是Global对象的属性。</p>
+<p>5.7.2Math对象</p>
+<p>Math对象：保存数学公式和信息</p>
+<p>min()和max()方法：确定一组数值中的最小值和最大值 接收任意多个数值参数</p>
+<p>找到数组中最大/最小值：var max  = Math.max.apply(Math,数组名);</p>
+<p>舍入方法：1.向上舍入Math.ceil() 2.向下舍入Math.floor() 3.标准舍入Math.round()</p>
+<p>随机数：Math.random()返回大于等于0小于1的一个随机数</p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2018-09-25T08:05:39.947Z" itemprop="datePublished">2018-09-25</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【JavaScript】JavaScript高级程序设计 第五章引用类型" data-title="【JavaScript】JavaScript高级程序设计 第五章引用类型" data-url="http://yoursite.com/2018/09/25/【JavaScript】JavaScript高级程序设计 第五章引用类型/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://s1.ax1x.com/2018/11/27/FVZTmD.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球Josey♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>

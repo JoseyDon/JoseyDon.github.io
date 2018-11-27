@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>【JavaScript】JavaScript高级程序设计 第三章 基本概念 | ♥毛球Josey♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球Josey♥的博客">
+	<img src="/favicon.png" alt="♥毛球Josey♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/11/%E3%80%90css%E3%80%91css%E4%B8%AD%E4%BD%BF%E7%94%A8em/" target="_blank">【css】css中使用em</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JaveScript%E3%80%91JavaScript%E5%85%A5%E9%97%A8%E7%AF%87/" target="_blank">【JaveScript】JavaScript入门篇</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JavaScript%E3%80%91%E4%BA%8B%E4%BB%B6/" target="_blank">【JavaScript】事件</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/02/22/%E3%80%90JavaScript%E3%80%91JavaScript%E5%AE%9E%E4%BE%8B/" target="_blank">【JavaScript】JavaScript实例</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90javascript%E3%80%91%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" target="_blank">【javascript】用javascript实现动画效果</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90Javascript%E3%80%91CSS-DOM/" target="_blank">【javascript】CSS-DOM</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91%E8%BD%AE%E6%92%AD%E5%9B%BE%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" target="_blank">【Javascript】轮播图实现原理</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91UI%E7%BB%84%E4%BB%B6%E4%B9%8B%E6%8E%92%E5%BA%8F%E8%A1%A8%E6%A0%BC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">【Javascript】UI组件之排序表格学习笔记</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【JavaScript】JavaScript高级程序设计 第三章 基本概念
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>3.1语法</p>
+<p> 3.1.1区分大小写</p>
+<p>ECMAScript中的一切（变量、函数名和操作符）都区分大小写。</p>
+<p>3.1.2 标识符</p>
+<p>标识符：变量、函数、属性的名字，或者函数的参数。</p>
+<p>命名规则：1.第一个字符必须是字母or _ or $</p>
+<p>​            2.其他字符可以是字母、_、$、数字</p>
+<p>惯例：标识符采用驼峰大小写格式</p>
+<p>提示：关键字、保留字、true、false和num不能用作标识符。</p>
+<p>3.1.3 注释</p>
+<p>单行注释 //</p>
+<p>块级注释</p>
+<p>/*</p>
+<p> *</p>
+<p> *</p>
+<p>*/</p>
+<p>提示：第二行和第三行以星号开头不是必须的。</p>
+<p>3.1.4严格模式</p>
+<p>作用：严格模式是为javascript定义了一种不同的解析与执行模型。</p>
+<p>启用严格模式方法：</p>
+<p>1.顶部添加“use strict”（此为编译指示）</p>
+<p>2.函数内部上方添加use strict”</p>
+<p>function fn(){</p>
+<p>“use strict”</p>
+<p>//函数体</p>
+<p>}</p>
+<p>3.1.5语句</p>
+<p>1.分号：</p>
+<p>ECMAScript语句以分号结尾；如果省略分号，则由解析器确定语句的结尾。</p>
+<p>惯例：不要忽略分号，节省解析器推测插入分号这个过程的时间。</p>
+<p>2，括号：</p>
+<p>把多行语句放入代码块中。</p>
+<p>惯例：在条件控制语句中不论单行还是多行语句，始终在控制语句中使用代码块。</p>
+<p>3.2关键字和保留字</p>
+<p>关键字：表示控制语句的开始或结束，或者用于执行特定操作。</p>
+<p>保留字：将来可能被用作关键字。</p>
+<p>提示：关键字和保留字不能作为标识符。</p>
+<p>3.3变量</p>
+<p>松散类型：变量可以用来保存任何类型的数据。ECMAScript中的变量就是松散类型。</p>
+<p>操作符：var 定义变量</p>
+<p>逗号：一条语句定义多个变量，用逗号隔开。</p>
+<p>提示：1.未经过初始化的变量值为undefined</p>
+<p>​        2.可以在修改变量值的同时修改值的类型（不推荐）</p>
+<p>​            3.用var操作符定义的变量为局部变量</p>
+<p>​            4.不用var操作符定义的变量为全局变量（不推荐）</p>
+<p>​            5.严格模式下不能定义名为eval和arguments的变量。</p>
+<p>类型（基本数据类型）：undefined null boolean number string</p>
+<p>1种复杂数据类型：object（无序的名值对）</p>
+<p>提示：ECMAScript不支持任何创建自定义类型的机制。</p>
+<p>3.4.1typeof操作符</p>
+<p>作用：检测变量的数据类型</p>
+<p>返回值：undefined - 变量未定义  </p>
+<p>​               Boolean - 变量为布尔值</p>
+<p>​               string  - 变量为字符串</p>
+<p>​              number - 变量为数字</p>
+<p>​             object - 变量为对象或null3/*</p>
+<p>​            function - 变量为函数</p>
+<p>提示：1.typeof操作符的操作数可以是变量也可以是数值字面量</p>
+<p>​           2.typeof 变量/字面量 或者 typeof (变量/字面量)</p>
+<p>​           3.特殊值null被认为是空对象的引用，所以返回对象</p>
+<p>​          4.function不是一种数据类型，而属于对象。</p>
+<p>3.4.2undefined类型</p>
+<p>值：只有undefined一个值。</p>
+<p>作用：使用var声明变量但为初始化时变量值就为undefined。</p>
+<p>提示：1.未声明的变量和声明未初始化的变量不同，前者会导致出错。</p>
+<p>​            2.未声明的变量只能执行typeof操作符这一项操作。</p>
+<p>​            3.未声明的变量和声明未初始化的变量使用typeof返回值都是undefined。</p>
+<p>惯例：没必要将变量显式设置为undefined</p>
+<p>3.4.3null类型</p>
+<p>值：只有null一个值。</p>
+<p>提示：1.null值表示一个空对象指针，即空对象引用。</p>
+<p>​            2.typeof操作符检测null时返回object</p>
+<p>​            3.null == undefined // true undefined值是派生自null值的 这个操作符会转换其操作数</p>
+<p> 惯例：如果定义的变量准备用来保存对象，初始化为null。</p>
+<p>3.4.4boolean类型</p>
+<p>值：true和false</p>
+<p>转型函数Boolean()： 对任何数据类型的值调用该函数，返回一个Boolean值。</p>
+<p>​                                     boolean类型-true：true；false：false</p>
+<p>​                                     string类型-true：非空字符串；false：“”（空字符串）</p>
+<p>​                                     number类型-true：任何非0数字值；false：0和NaN</p>
+<p>​                                     object类型-true：任何对象；false：null</p>
+<p>​                                     undefined-true：不适用；false：undefined</p>
+<p>提示：boolean类型的字面值区分大小写</p>
+<p>3.4.5number类型</p>
+<p>整数</p>
+<p>十进制字面值：直接输入</p>
+<p>八进制字面值：070//八进制的56 079//无效的八进制数值，被解析为79（在严格模式下无效）</p>
+<p>十六进制字面值：0xA//十六进制的10</p>
+<p>提示：1.在进行算术计算时，所有的八进制和十六进制的数值都是被转换成十进制数值进行计算。</p>
+<p>​           2.可以保存+0和-0，两者相等。 </p>
+<p>浮点数值</p>
+<p>初始化：1.1 0.1 .1(不推荐)</p>
+<p>隐式转换成整数：1.小数点后没跟任何数字1.   2.浮点数值本身就是一个整数10.0</p>
+<p>科学计数法：默认情况下小数点后带有6个0以上的浮点数值会被转换成科学计数法形式。</p>
+<p>浮点数的精度：最高精度为17，但在进行算术计算时其精确度不如整数。</p>
+<p>提示：0.1+0.2 !=0.3 而是0.30000000000000004，永远不要检测某个特定的浮点数值。</p>
+<p>数值范围</p>
+<p>最小数值：保存在Number.MIN_VALUE中</p>
+<p>最大数值：保存在Number.MAX_VALUE中</p>
+<p>isFinite()：该函数在参数位于最小与最大数值之间时会返回true</p>
+<p>提示：1.如果某数值超出最小数值被转换成-Infinity（负无穷），如果某数值超出最大数值被转换成Infinity（正无穷）</p>
+<p>​            2.无穷数不能参加算数计算。</p>
+<p>NaN</p>
+<p>意义：Not  a Number 表示一个本来要返回数值的操作数未返回数值的情况。</p>
+<p>isNaN()：是否“不是数值” </p>
+<p>​                 能转换成数值返回false 不能转换成数值返回true</p>
+<p>​                 当判断对方是否”不是数值“时，先调用对象的valueOf()方法；确定该方法返回的值是否可以转换成数值；如果不能再调用toString()方法。</p>
+<p>数值转换</p>
+<p>强制数据类型转换方法：①Number() ②parseInt() ③parseFloat()</p>
+<p>①Number()：将任何数据类型转换成数字</p>
+<p>字符串=》数字： 空格、空=》0 ‘100’=》100 ‘1.1’=》1.1 十六进制=》十进制整数 ‘100px’=》NaN</p>
+<p>布尔值=》数字： true=》1 false=》0</p>
+<p>null=》数字：0</p>
+<p>undefined=》数字：NaN</p>
+<p>函数=》数字：NaN</p>
+<p>数组=》数字： 空=》0 只有一个成员=》第一个成员转换 多个成员=》NaN</p>
+<p>Json =》数字：NaN</p>
+<p>对象=》数字：①调用对象的valueOf()方法，然后根据前面的规则转换，如果转换的值为NaN，调用toString()函数，再根据规则转换返回的字符串值。</p>
+<p>②parseInt()：将字符串转换成整数</p>
+<p>parseInt(b,10) 从左到右一个一个转换，遇到一个非 数字/+/-/空格的东西就截断不管后面的内容。</p>
+<p>惯例：避免错误的解析建立无论什么情况下都明确指定基数。</p>
+<p>③parseFloat()：将字符串转换成浮点型</p>
+<p>在parseInt的基础上认识第一个小数点。</p>
+<p>只能解析十进制数，所以没有第二个参数。        </p>
+<p>提示：1.任何涉及NaN的操作都会返回NaN</p>
+<p>​            2.NaN与任何值都不相等，包括NaN本身 NaN==NaN =》false</p>
+<p>3.4.6string类型</p>
+<p>字符字面量（转义序列）：表示非打印字符或者具有其他用途的字符。</p>
+<p>length属性：返回字符串的长度</p>
+<p>不可变：字符串是不可变的，要改变某个变量保存的字符串，首先要销毁原来的字符串；再用另一个包含新值的字符串填充该变量。</p>
+<p>var lang = “Java”;</p>
+<p>lang = lang + “Script”;</p>
+<p>首先创建一个能容纳10字符的新字符串，然后在这个字符串中填充“Java”和“Script”，最后一步是销毁原来的字符串“Java”和“Script”。</p>
+<p>转换为字符串：①toString() ②String()</p>
+<p>①toString()数值 布尔值 对象和字符串都有这个方法 但是null和undefined没有</p>
+<p>该方法可以设置一个基数用以输出指定进制的值</p>
+<p>②String()</p>
+<p>如果值有toString()方法则调用该方法；如果值为null返回“null”；如果值为undefined返回“undefined”；</p>
+<p>惯例：使用加号操作符把某个值与一个字符串“”加在一起转换成字符串</p>
+<p>3.4.7object类型</p>
+<p>意义：一组数据和功能的集合。</p>
+<p>创建：new Object() 圆括号可以省略但不推荐</p>
+<p>object每个实例具有的属性和方法：</p>
+<p>constructot：保存创建当前对象的函数</p>
+<p>hasOwnProperty(“propertyName”)：检查给定的属性在当前对象实例中是否存在</p>
+<p>isPrototypeof(object)：检查传入的对象是否是当前对象的原型</p>
+<p>properIsEnumerable(“propertyName”)：检查给定的属性是否能够用for-in语句来枚举。</p>
+<p>toLocaleString()：返回对象的字符串表示，该字符串与执行环境的地区对应。</p>
+<p>toString()：返回对象的字符串表示</p>
+<p>valueOf()：返回对象的字符串、数值或布尔值表示</p>
+<p>提示：object类型所具有的任何属性和方法也同样存在于更具体的对象中。</p>
+<p>3.5 操作符</p>
+<p>3.5.1 一元操作符</p>
+<p>意义：只能操作一个值的操作符</p>
+<p>递增和递减操作符</p>
+<p>前置型：变量的值都是在语句被求值以前改变的</p>
+<p>后置型：递增和递减操作是在包含它们的语句被求值之后才执行的</p>
+<p>一元加和减操作符</p>
+<p>在对非数值应用一元加操作符时，该操作符会像Number()转型函数一样对这个值进行转换。</p>
+<p>3.5.2 位操作符</p>
+<p>3.5.3布尔操作符</p>
+<p>逻辑非!：将操作数转换为一个布尔值，在对其求反。</p>
+<p>提示：1.同时使用两个逻辑非操作符，实际上就会模拟boolean()转型函数的行为。</p>
+<p>逻辑与&amp;&amp;：</p>
+<p>第一个操作数是对象，返回第二个操作数</p>
+<p>第二个操作数是对象，只要在第一个操作数返回true时才会返回该对象。</p>
+<p>两个操作数都是对象，则返回第二个操作数</p>
+<p>第一个操作数为null，则返回null</p>
+<p>第一个操作数为NaN，则返回NaN</p>
+<p>第一个操作数为undefined，则返回undefined</p>
+<p>提示：1.如果第一个操作数的值是false，就不会对第二个操作数求值。</p>
+<p>逻辑或||：</p>
+<p>第一个操作数是对象，则返回第一个操作数</p>
+<p>两个操作数都是对象，则返回第一个操作数</p>
+<p>提示：1.如果第一个操作数的值是true，就不会对第二个操作数求值。</p>
+<p>3.5.4乘性操作符</p>
+<p>在操作数为非数值的情况下会执行自动的类型转换，如果参加计算的操作数不是数值，会使用Number()转型函数将其转换为数值。</p>
+<p>乘法*：</p>
+<p>有NaN参与，结果为NaN</p>
+<p>Infinity*0，结果为NaN</p>
+<p>Infinity*非零数值，结果为Infinity或-Infinity</p>
+<p>Infinity*Infinity，结果为Infinity</p>
+<p>除法/：</p>
+<p>有NaN参与，结果为NaN</p>
+<p>Infinity被Infinity除，结果为NaN</p>
+<p>0/0，结果为NaN</p>
+<p>非0的有限数/0，结果是Infinity或-Infinity</p>
+<p>Infinity被任何非0数除，结果是Infinity或-Infinity</p>
+<p>求模%：</p>
+<p>被除数是无穷大值而除数是有限大，结果为NaN</p>
+<p>被除数是有限大值而除数是0，结果为NaN</p>
+<p>Infinity/Infinity，结果为NaN</p>
+<p>被除数是有限大值而除数是无限大值，结果是被除数</p>
+<p>被除数是0，结果为0</p>
+<p>3.5.5加性操作符</p>
+<p>加性操作符也会隐式转换数据类型。</p>
+<p>加法+：</p>
+<p>如果有NaN，结果为NaN</p>
+<p>Infinity+Infinity，结果为Infinity</p>
+<p>-Infinity+ -Infinity，结果为-Infinity</p>
+<p>Infinity+ -Infinity，结果为NaN</p>
+<p>+0 + +0，结果为+0</p>
+<p>-0+ -0，结果为-0</p>
+<p>+0 + -0，结果为+0</p>
+<p>如果有字符串，会使全部操作数都为字符串，再拼接起来。</p>
+<p>如果有对象、数值或布尔值，会调用toString()，undefined和null会调用string()取得字符串“undefined”和“null”</p>
+<p>减法-：</p>
+<p>如果有NaN，结果为NaN</p>
+<p>Infinity - Infinity，结果为NaN</p>
+<p>-Infinity - -Infinity，结果为NaN</p>
+<p>Infinity- -Infinity，结果为Infinity</p>
+<p>-Infinity - Infinity，结果为Infinity</p>
+<p>+0 - +0，结果为+0</p>
+<p>-0 - +0，结果为-0</p>
+<p>-0 - -0，结果为+0</p>
+<p>3.5.6关系操作符</p>
+<p>&lt; &gt; &lt;= &gt;=</p>
+<p>当关系操作符的操作数使用了非数值时</p>
+<p>两个操作数都是字符串，比较字符串对应的字符编码</p>
+<p>一个操作数是数值，将另一个操作数转换成数值进行比较</p>
+<p>一个操作数是布尔值，将它转换为数值进行比较</p>
+<p>提示：1.大写字母的字符编码全部小于小写字母的字符编码</p>
+<p>​            2.任何操作数与NaN进行关系比较，结果都是false</p>
+<p>3.5.7相等操作符</p>
+<p>相等（==）和不相等（!=）——强制转型——先转换再比较</p>
+<p>有一个操作数是布尔值，将false转换为0，true转换为1</p>
+<p>一个操作数是字符串，另一个操作数是数值，先将字符串转换为数值再进行比较</p>
+<p>提示：1.null和undefined是相等的</p>
+<p>​            2.有一个操作数是NaN，相等操作符返回false，不相等操作符返回true </p>
+<p>​            3.NaN != NaN</p>
+<p>全等（===）和不全等（!==）——仅仅比较不转换——也可以理解为包括类型一起比较</p>
+<p>提示：1.null===undefined会返回false</p>
+<p>​            2.推荐使用全等和不全等操作符，保持数据类型的完整性</p>
+<p>3.5.8条件操作符</p>
+<p>?:</p>
+<p>3.5.9赋值操作符</p>
+<p>在等号前再添加乘性操作符、加性操作符或位操作符，可以完成复合赋值操作。</p>
+<p>提示：复合赋值操作的目的是简化赋值操作，不会提升性能</p>
+<p>3.5.10逗号操作符</p>
+<p>使用逗号操作符可以在一条语句中执行多个操作。</p>
+<p>用于赋值：逗号操作符返回表达式中的最后一项。</p>
+<p>var num = (5,1,4,8,0);//num的值为0</p>
+<p>3.6语句</p>
+<p>使用一个或多个关键字来完成给定任务</p>
+<p>3.6.1if语句</p>
+<p>自动调用boolean()转换函数将表达式的结果转换成一个布尔值</p>
+<p>惯例：始终使用代码块，即使要执行的只有一行代码</p>
+<p>3.6.2do-while语句</p>
+<p>后测试循环语句：只有在循环体的代码执行后才会测试出口条件。</p>
+<p>特点：循环体内的代码至少会被执行一次。</p>
+<p>3.6.3while语句</p>
+<p>前测试循环语句：在循环体内的代码被执行之前，就会对出口条件求值。</p>
+<p>3.6.4for语句</p>
+<p>前测试循环语句。</p>
+<p>提示：1.while循环做不到的事情for循环也做不到</p>
+<p>​            2.for循环的变量初始化表达式中可以不适用var关键字</p>
+<p>3.6.5for-in语句</p>
+<p>迭代语句，用来枚举对象的属性。</p>
+<p>提示：在使用for-in循环之前，先检测确定该对象的值不是null或undefined</p>
+<p>3.6.6label语句</p>
+<p>作用：在代码中添加标签，以便将来使用。</p>
+<p>3.6.7break和continue语句</p>
+<p>break：立即退出循环，强制继续执行循环后的语句</p>
+<p>continue：退出本次循环，进行下一次循环</p>
+<p>两者可以和label语句联合使用，返回代码特定的位置</p>
+<p>3.6.8with语句</p>
+<p>作用：将代码的作用域设置到一个特定的对象中，简化多次编写同一个对象的工作</p>
+<p>提示：严格模式下不允许使用with语句</p>
+<p>3.6.9switch语句</p>
+<p>break关键字会导致代码执行流跳出switch语句。如果省略break关键字就会导致执行完当前case后继续执行下一个case。</p>
+<p>default关键字用于在表达式不匹配前面任何一种情形的时候执行机动代码。</p>
+<p>惯例：1.通过为每个case添加break语句避免同时执行多个case代码</p>
+<p>​           2.如果确实要混合几种情形，要在代码中添加注释，说明是有意省略了break关键字</p>
+<p>3.7函数</p>
+<p>提示：1.位于return语句之后的任何代码都永远不会执行。</p>
+<p>​            2.return语句可以不带有任何返回值，函数在停止执行后将返回undefined值。</p>
+<p>惯例：1.要么让函数始终都返回一个值，要么永远都不要返回值</p>
+<p>​            2.严格模式下函数名和参数名不能为eval或arguments</p>
+<p>​            3.严格模式下不能出现两个命名参数同名的情况</p>
+<p>3.7.1 理解参数</p>
+<p>提示：1.即便你定义的函数只接收两个参数，在调用这个函数时也未必一定要传递两个参数，可以一个也可以三个，也可以不传。</p>
+<p>​            2.参数是由一个数组来表示的，函数接收的始终是这个数组，而不关心数组里包含哪些参数。</p>
+<p>​            3.在函数体内可以通过arguments对象来访问这个参数数组。</p>
+<p>​            4.arguments对象可以和命名参数一起使用，它的值用于与对应的命名参数的值保持同步。</p>
+<p>​            5.arguments对象和命名参数不是在相同的内存空间，它们的内存空间是相互独立的，但它们的值会同步。</p>
+<p>​           6.arguments对象的长度是由传入的参数个数决定的，而不是由定义函数时的参数个数决定的。</p>
+<p>​           7.没有传递值的命名参数将自己被赋予undefined值。</p>
+<p>​           8.严格模式下arguments对象的赋值无效。重写arguments的值会产生错误。</p>
+<p>​           9.js中所有参数传递的都是值，不可能通过引用传递参数。</p>
+<p>弥补js函数无重载的遗憾：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function doAdd()&#123;</div><div class="line">  if(arguments.length == 1)&#123;</div><div class="line">  	alert(arguments[0]+10);</div><div class="line">  &#125;else if(arguments.length == 2)&#123;</div><div class="line">    alert(arguments[0]+arguments[1]);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>3.7.2没有重载</p>
+<p>提示：1.没有函数签名，不可能有真正的重载。</p>
+<p>​            2.js中定义两个名字相同的函数，该名字只属于后定义的函数。</p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2018-09-21T23:49:43.045Z" itemprop="datePublished">2018-09-22</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【JavaScript】JavaScript高级程序设计 第三章 基本概念" data-title="【JavaScript】JavaScript高级程序设计 第三章 基本概念" data-url="http://yoursite.com/2018/09/22/【JavaScript】JavaScript高级程序设计 第三章 基本概念/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://s1.ax1x.com/2018/11/27/FVZTmD.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球Josey♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
