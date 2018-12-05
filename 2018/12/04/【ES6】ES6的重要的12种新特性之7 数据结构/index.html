@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>archive_a: 2018/11 | ♥毛球Josey♥的博客</title>
+    <title>【ES6】ES6的重要的12种新特性之7 数据结构 | ♥毛球Josey♥的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
@@ -109,28 +109,76 @@
 <!--文章列表-->
 <div class="wrapper">
   
-    <ul class="posts-list mb+ js-posts">
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-            <i class="post-status iconfont icon-icon"></i>  
-          
-          <h2 class="no-background"  >
-            <span><a href="/2018/11/29/【ES6】ES6的重要的12种新特性之let、const、块级作用域/">【ES6】ES6的重要的12种新特性之let、const、块级作用域</a></span>
-            <time class="post-time" datetime="2018-11-29T00:57:21.917Z" itemprop="datePublished">2018-11-29</time>
-          </h2>
-        </li>
-      
-    </ul>
-    
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【ES6】ES6的重要的12种新特性之7 数据结构
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h2 id="新的数据结构"><a href="#新的数据结构" class="headerlink" title="新的数据结构"></a>新的数据结构</h2><h3 id="1-Set无序集合"><a href="#1-Set无序集合" class="headerlink" title="1.Set无序集合"></a>1.Set无序集合</h3><p>很多场景下并不需要为一个集合中的元素维护序列，甚至需要无序集合。</p>
+<p>可以把set当成没有排序概念的数组，并且无序集合中的元素不可重复。</p>
+<p>①使用语法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>();</div><div class="line"><span class="keyword">const</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]);</div></pre></td></tr></table></figure>
+<p>②集合对象操作方法</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/49502442-1086c380-f8b0-11e8-9baf-944b73d28bc7.PNG" alt="1"></p>
+<p>遍历</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/49502446-141a4a80-f8b0-11e8-9b48-1845db80eefb.PNG" alt="2"></p>
+<h3 id="2-WeakSet"><a href="#2-WeakSet" class="headerlink" title="2.WeakSet"></a>2.WeakSet</h3><p>Weak是升级版本的数据类型，Weak版本的数据类型是无法包含无引用的元素的。一旦数据结构内的任意元素的引用被解除，该元素便会移出当前所在的数据结构，</p>
+<p>WeakSet是Set无序集合的升级版本，不能包含值类型元素，不能包含无引用对象，无法被探知其大小和其中所包含的元素。</p>
+<p>WeakSet最大的实用意义在于可以直接对引擎中垃圾收集器的运行情况有程序化的探知方式。</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/49502449-14b2e100-f8b0-11e8-9270-1185ec0df84b.PNG" alt="3"></p>
+<h3 id="3-Map映射类型"><a href="#3-Map映射类型" class="headerlink" title="3.Map映射类型"></a>3.Map映射类型</h3><p>映射类型：关联数组，若干键值对组成的集合，每个键只能出现一次。</p>
+<p>①使用语法</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/49502454-15e40e00-f8b0-11e8-9193-fb38e9996a3a.PNG" alt="4"></p>
+<p>②映射类型的操作方法</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/49502457-17153b00-f8b0-11e8-8cef-16b9bf012bdd.PNG" alt="5"></p>
+<p><img src="https://user-images.githubusercontent.com/22424758/49502462-18466800-f8b0-11e8-9f10-083b3862aefe.PNG" alt="6"></p>
+<p>③映射对象和object的区别</p>
+<p>Map映射对象可以使用任意对象作为键，并且能方便得知键值对的数量。</p>
+<p>对象的JOSN序列化结果是对象字面量形式，Map映射对象的JSON处理结果是以关联数组的形式表达。</p>
+<h3 id="4-WeakMap"><a href="#4-WeakMap" class="headerlink" title="4.WeakMap"></a>4.WeakMap</h3><p>WeakMap的键会检查变量引用，只要其中任意一个引用被解除，该键值对就会被删除。</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/49502464-19779500-f8b0-11e8-8f04-eea509bf0817.PNG" alt="7"></p>
+<p>附代码地址：<a href="https://github.com/JoseyDon/ES6-demo" target="_blank" rel="external">https://github.com/JoseyDon/ES6-demo</a></p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2018-12-04T12:57:10.931Z" itemprop="datePublished">2018-12-04</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【ES6】ES6的重要的12种新特性之7 数据结构" data-title="【ES6】ES6的重要的12种新特性之7 数据结构" data-url="http://yoursite.com/2018/12/04/【ES6】ES6的重要的12种新特性之7 数据结构/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
 
   
 </div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
 
 
 
