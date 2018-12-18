@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>archive_a: 2018/11 | ♥毛球Josey♥的博客</title>
+    <title>【ES6】ES6的重要的13种新特性之symbol | ♥毛球Josey♥的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
@@ -109,28 +109,81 @@
 <!--文章列表-->
 <div class="wrapper">
   
-    <ul class="posts-list mb+ js-posts">
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-            <i class="post-status iconfont icon-icon"></i>  
-          
-          <h2 class="no-background"  >
-            <span><a href="/2018/11/29/【ES6】ES6的重要的13种新特性之let、const、块级作用域/">【ES6】ES6的重要的13种新特性之let、const、块级作用域</a></span>
-            <time class="post-time" datetime="2018-11-29T00:57:21.917Z" itemprop="datePublished">2018-11-29</time>
-          </h2>
-        </li>
-      
-    </ul>
-    
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【ES6】ES6的重要的13种新特性之symbol
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>Symbol是一种互不等价的标志，即两个Symbol值都不相等。</p>
+<p>可以利用symbol值互不等价特性来实现属性操作的互不打扰。</p>
+<h3 id="1-生成唯一的Symbol值"><a href="#1-生成唯一的Symbol值" class="headerlink" title="1.生成唯一的Symbol值"></a>1.生成唯一的Symbol值</h3><p>symbol所得到的是一个symbol值，同时可以为symbol值添加一个描述。</p>
+<p>Symbol()函数可以生成一个与其他Symbol值互不等价的的Symbol值，可以接受除Symbol值以外的值作为该Symbol值的描述。</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/50120441-81ef4a80-0290-11e9-88b7-b9dc6e3e9389.PNG" alt="1"></p>
+<h3 id="2-描述相同的symbol值不等价"><a href="#2-描述相同的symbol值不等价" class="headerlink" title="2.描述相同的symbol值不等价"></a>2.描述相同的symbol值不等价</h3><p>描述对Symbol值本身不起任何改变作用。两个具有相同描述值的Symbol值不具有等价性。</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/50120667-3e491080-0291-11e9-966c-62831bd59fb0.PNG" alt="2"></p>
+<h3 id="3-symbol是值类型"><a href="#3-symbol是值类型" class="headerlink" title="3.symbol是值类型"></a>3.symbol是值类型</h3><p>Symbol是一种值类型而不是引用类型，</p>
+<p>值类型：将Symbol值作为函数形参进行传递，将会进行复制值传递而非引用传递。</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/50121161-d3003e00-0292-11e9-94f2-eb0fc88d16bc.PNG" alt="3"></p>
+<h3 id="4-注册全局可用的Symbol"><a href="#4-注册全局可用的Symbol" class="headerlink" title="4.注册全局可用的Symbol"></a>4.注册全局可用的Symbol</h3><p>允许开发者在当前运行时中定义一些具有全局有效性的Symbol。</p>
+<p>通过key值向当前运行时注册一个需要在其他程序中使用的Symbol。</p>
+<p>Symbol.for([key]);</p>
+<p>如果key被注册过会返回一个与第一次使用所创建的Symbol值等价的Symbol值。</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/50121646-59694f80-0294-11e9-9c3a-cf484ff25a18.PNG" alt="4"></p>
+<p>还可以根据全局Symbol获取到对应的key值。</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/50121652-5c644000-0294-11e9-993f-8379d3111694.PNG" alt="5"></p>
+<h3 id="5-常用Symbol值"><a href="#5-常用Symbol值" class="headerlink" title="5.常用Symbol值"></a>5.常用Symbol值</h3><p>①Symbol.iterator</p>
+<p>定义可迭代对象</p>
+<p>②Symbol.hasInstance</p>
+<p>扩展instanceof语句内部逻辑权限</p>
+<p>③Symbol.match</p>
+<p>为正则表达式提供自定义入口。</p>
+<p>④Symbol.unscopables</p>
+<p>⑤Symbol.toPrimitive</p>
+<p>用于将引用类型的对象转换为值类型。</p>
+<p>⑥Symbol.toStringTag</p>
+<p>当某对象的toString()方法被调用时所返回的Tag内容是什么。</p>
+<p>附代码地址：<a href="https://github.com/JoseyDon/ES6-demo" target="_blank" rel="external">https://github.com/JoseyDon/ES6-demo</a></p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2018-12-18T00:12:54.970Z" itemprop="datePublished">2018-12-18</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【ES6】ES6的重要的13种新特性之symbol" data-title="【ES6】ES6的重要的13种新特性之symbol" data-url="http://yoursite.com/2018/12/18/【ES6】ES6的重要的13种新特性之symbol/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
 
   
 </div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
 
 
 

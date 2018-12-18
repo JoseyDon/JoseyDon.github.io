@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>【ES6】ES6的重要的13种新特性之模块化 | ♥毛球Josey♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球Josey♥的博客">
+	<img src="/favicon.png" alt="♥毛球Josey♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/11/%E3%80%90css%E3%80%91css%E4%B8%AD%E4%BD%BF%E7%94%A8em/" target="_blank">【css】css中使用em</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JaveScript%E3%80%91JavaScript%E5%85%A5%E9%97%A8%E7%AF%87/" target="_blank">【JaveScript】JavaScript入门篇</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JavaScript%E3%80%91%E4%BA%8B%E4%BB%B6/" target="_blank">【JavaScript】事件</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/02/22/%E3%80%90JavaScript%E3%80%91JavaScript%E5%AE%9E%E4%BE%8B/" target="_blank">【JavaScript】JavaScript实例</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90javascript%E3%80%91%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" target="_blank">【javascript】用javascript实现动画效果</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90Javascript%E3%80%91CSS-DOM/" target="_blank">【javascript】CSS-DOM</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91%E8%BD%AE%E6%92%AD%E5%9B%BE%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" target="_blank">【Javascript】轮播图实现原理</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91UI%E7%BB%84%E4%BB%B6%E4%B9%8B%E6%8E%92%E5%BA%8F%E8%A1%A8%E6%A0%BC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">【Javascript】UI组件之排序表格学习笔记</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【ES6】ES6的重要的13种新特性之模块化
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<h3 id="1-引入模块"><a href="#1-引入模块" class="headerlink" title="1.引入模块"></a>1.引入模块</h3><p>①引入默认模块</p>
+<p>使用CommonJS标准来引入模块化：为每一个模块设置一个命名空间，即这个模块的容器。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> http <span class="keyword">from</span> <span class="string">'http'</span></div></pre></td></tr></table></figure>
+<p>②引入模块部分接口</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;isEmpty&#125; <span class="keyword">from</span> <span class="string">'lodash'</span></div></pre></td></tr></table></figure>
+<p>另外可以从模块中局部引用的结构定义一个别名，以避免指代不明或接口重名的情况出现。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;createServer <span class="keyword">as</span> createHTTPServer&#125; <span class="keyword">from</span> <span class="string">'http'</span></div></pre></td></tr></table></figure>
+<p>③引入全部局部接口到指定命名空间</p>
+<p>有的模块并不会定义默认接口，而只是定义了若干个命名接口</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> * <span class="keyword">as</span> lib <span class="keyword">from</span> <span class="string">'module'</span></div></pre></td></tr></table></figure>
+<p>③混合引入默认接口和命名接口</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123;<span class="keyword">default</span> <span class="keyword">as</span> Client,utils&#125; <span class="keyword">from</span> <span class="string">'module'</span></div></pre></td></tr></table></figure>
+<p>引入的默认接口必须要使用as语句被赋予一个别名，不然default作为保留关键字无法使用。</p>
+<p>简介方法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> Client,&#123;utils&#125; <span class="keyword">from</span> <span class="string">'module'</span></div><div class="line"><span class="keyword">import</span> Client,* <span class="keyword">as</span> lib <span class="keyword">from</span> <span class="string">'module'</span></div></pre></td></tr></table></figure>
+<p>④不引入接口仅运行模块代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="string">'system-apple'</span></div></pre></td></tr></table></figure>
+<h3 id="2-定义模块"><a href="#2-定义模块" class="headerlink" title="2.定义模块"></a>2.定义模块</h3><p>ES Module没有模块定义的概念。</p>
+<p>ES Module中以文件名及其相对或绝对路径作为该模块被引用时的标识。</p>
+<h3 id="3-暴露模块"><a href="#3-暴露模块" class="headerlink" title="3.暴露模块"></a>3.暴露模块</h3><p>①暴露单一模块</p>
+<p>export语句后所跟着的语句需要具有声明部分（提供所暴露接口的标识）和赋值部分（提供接口的值）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> apiRoot = <span class="string">'https://example.com/api'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">method</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Foo</span></span>&#123;</div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">import</span> &#123;method,Foo&#125; <span class="keyword">from</span> <span class="string">'module.js'</span></div></pre></td></tr></table></figure>
+<p>②暴露模块默认接口</p>
+<p>有时候一个模块只需要暴露一个接口，比如需要让一个工具类直接成为这个模块。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span> </span>&#123;</div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">import</span> Client <span class="keyword">from</span> <span class="string">'client.js'</span></div></pre></td></tr></table></figure>
+<p>③混合使用暴露接口语句</p>
+<p>export语句和export default语句可以同时使用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">Client</span></span>&#123;</div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> foo = <span class="string">'bar'</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> Client,&#123;foo&#125; <span class="keyword">from</span> <span class="string">'module'</span></div></pre></td></tr></table></figure>
+<p>④从其他模块暴露接口</p>
+<p>ES Module提供通过其他模块所暴露的接口作为当前模块接口的方法。</p>
+<p>⑤暴露一个模块的所有接口</p>
+<p>将import语句和export组合，直接将一个模块的接口暴露到另一个模块上，减少啰嗦代码的产生。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;<span class="comment">/*...*/</span>&#125;</div><div class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">'module-1'</span></div><div class="line"><span class="keyword">import</span> &#123;foo&#125; <span class="keyword">from</span> <span class="string">'module'</span></div></pre></td></tr></table></figure>
+<p>⑥暴露一个模块的部分接口</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> &#123;member&#125; <span class="keyword">from</span> <span class="string">'module'</span></div><div class="line"></div><div class="line"><span class="keyword">export</span> &#123;<span class="keyword">default</span> <span class="keyword">as</span> ModulelDefault&#125; <span class="keyword">from</span> <span class="string">'module'</span></div></pre></td></tr></table></figure>
+<p>⑦暴露一个模块的默认接口</p>
+<p>可以将一个模块的默认接口作为另一个模块的默认接口。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> &#123;<span class="keyword">default</span>&#125; <span class="keyword">from</span> <span class="string">'module'</span></div></pre></td></tr></table></figure>
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2018-12-06T09:19:20.852Z" itemprop="datePublished">2018-12-06</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【ES6】ES6的重要的13种新特性之模块化" data-title="【ES6】ES6的重要的13种新特性之模块化" data-url="http://yoursite.com/2018/12/06/【ES6】ES6的重要的13种新特性之模块化/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://s1.ax1x.com/2018/11/27/FVZTmD.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球Josey♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>

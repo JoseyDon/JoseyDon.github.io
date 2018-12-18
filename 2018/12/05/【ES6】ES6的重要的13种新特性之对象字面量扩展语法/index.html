@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>archive_a: 2018/11 | ♥毛球Josey♥的博客</title>
+    <title>【ES6】ES6的重要的13种新特性之对象字面量扩展语法 | ♥毛球Josey♥的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
@@ -109,28 +109,63 @@
 <!--文章列表-->
 <div class="wrapper">
   
-    <ul class="posts-list mb+ js-posts">
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-            <i class="post-status iconfont icon-icon"></i>  
-          
-          <h2 class="no-background"  >
-            <span><a href="/2018/11/29/【ES6】ES6的重要的13种新特性之let、const、块级作用域/">【ES6】ES6的重要的13种新特性之let、const、块级作用域</a></span>
-            <time class="post-time" datetime="2018-11-29T00:57:21.917Z" itemprop="datePublished">2018-11-29</time>
-          </h2>
-        </li>
-      
-    </ul>
-    
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【ES6】ES6的重要的13种新特性之对象字面量扩展语法
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>解决问题：ES2015之前对象字面量只能用于表达对象。</p>
+<h3 id="1-函数类属性的省略语法"><a href="#1-函数类属性的省略语法" class="headerlink" title="1.函数类属性的省略语法"></a>1.函数类属性的省略语法</h3><p>使方法属性省略function</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> obj = &#123;</div><div class="line">  <span class="attr">foo</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'foo'</span>;</div><div class="line">  &#125;,</div><div class="line">  bar() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'bar'</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="https://user-images.githubusercontent.com/22424758/49501728-838f3a80-f8ae-11e8-91f2-ef9d16172023.PNG" alt="default"></p>
+<h3 id="2-支持proto注入"><a href="#2-支持proto注入" class="headerlink" title="2.支持proto注入"></a>2.支持<em>proto</em>注入</h3><p>可以得到更高的对象操作权限。</p>
+<p>可以直接向一个对象字面量注入<em>proto</em> ，使其直接成为指定类的一个实例，而无需创建另一个类来实现继承。</p>
+<h3 id="3-可动态计算的属性名"><a href="#3-可动态计算的属性名" class="headerlink" title="3.可动态计算的属性名"></a>3.可动态计算的属性名</h3><p>使用一个表达式来表达一个属性名。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> prefix = <span class="string">'es2015'</span>;</div><div class="line"><span class="keyword">const</span> obj = &#123;</div><div class="line">  [prefix + <span class="string">'enhancedObject'</span>]: <span class="string">'foobar'</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4-将属性名定义省略"><a href="#4-将属性名定义省略" class="headerlink" title="4.将属性名定义省略"></a>4.将属性名定义省略</h3><p>有时候需要将一些被定义的变量/常量作为其他对象字面量的属性值进行返回或传入操作。很多情况下这些变量名和属性名都是相同的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> foo = <span class="number">123</span>;</div><div class="line"><span class="keyword">const</span> bar = <span class="function"><span class="params">()</span> =&gt;</span> foo;</div><div class="line"><span class="keyword">const</span> obj = &#123;</div><div class="line">  foo,</div><div class="line">  bar</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>附代码地址：<a href="https://github.com/JoseyDon/ES6-demo" target="_blank" rel="external">https://github.com/JoseyDon/ES6-demo</a></p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2018-12-05T07:56:55.506Z" itemprop="datePublished">2018-12-05</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【ES6】ES6的重要的13种新特性之对象字面量扩展语法" data-title="【ES6】ES6的重要的13种新特性之对象字面量扩展语法" data-url="http://yoursite.com/2018/12/05/【ES6】ES6的重要的13种新特性之对象字面量扩展语法/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
 
   
 </div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
 
 
 

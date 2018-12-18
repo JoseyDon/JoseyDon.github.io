@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>archive_a: 2018/11 | ♥毛球Josey♥的博客</title>
+    <title>【ES6】ES6的重要的13种新特性之生成器 | ♥毛球Josey♥的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     
@@ -109,28 +109,73 @@
 <!--文章列表-->
 <div class="wrapper">
   
-    <ul class="posts-list mb+ js-posts">
-      
-                <!--<div class="type">
-          <div class="mask">
-            <i class="iconfont"></i>
-          </div>
-          </div>-->
-        <li class="post">
-          
-            <i class="post-status iconfont icon-icon"></i>  
-          
-          <h2 class="no-background"  >
-            <span><a href="/2018/11/29/【ES6】ES6的重要的13种新特性之let、const、块级作用域/">【ES6】ES6的重要的13种新特性之let、const、块级作用域</a></span>
-            <time class="post-time" datetime="2018-11-29T00:57:21.917Z" itemprop="datePublished">2018-11-29</time>
-          </h2>
-        </li>
-      
-    </ul>
-    
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【ES6】ES6的重要的13种新特性之生成器
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>生成器的主要功能：通过一段程序持续迭代或枚举出符合某个公式或算法的有序数列中的元素。</p>
+<p>生成器同时包含语法和底层支持。</p>
+<h3 id="1-生成器函数"><a href="#1-生成器函数" class="headerlink" title="1.生成器函数"></a>1.生成器函数</h3><p>生成器函数的函数体内容将会是所生成的生成器的执行内容。</p>
+<p>yield语句和return的作用有些相似，但不是退出函数体，而是切出当前函数的运行时，同时可以将一个值带到主线程中。</p>
+<p>生成器函数可以看做一个类。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明式定义</span></div><div class="line"><span class="function"><span class="keyword">function</span>* <span class="title">fibo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//表达式定义</span></div><div class="line"><span class="keyword">const</span> fnName = <span class="function"><span class="keyword">function</span>*(<span class="params"></span>)</span>&#123;<span class="comment">/*...*/</span>&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-生成器generator"><a href="#2-生成器generator" class="headerlink" title="2.生成器generator"></a>2.生成器generator</h3><p>生成器是一种类协程/半协程序。提供通过特定语句或方法（一般是yield语句）时其执行对象暂停的功能。</p>
+<p>yield语句可以将一个值带出协程，主线程也可以通过生成器对象的方法（.next()）将一个值带回到生成器的执行对象中去。</p>
+<p>每一个生成器都是类（生成器函数）的派生实例。</p>
+<h3 id="3-使用方法"><a href="#3-使用方法" class="headerlink" title="3.使用方法"></a>3.使用方法</h3><p>①构建生成器函数</p>
+<p>②执行生成器函数</p>
+<p>通过执行生成器函数返回一个生成器对象，用于运行生成器内容和接受其中的值。</p>
+<p>生成器也是一个类，这个类有个操作方法generator.next(value)用于获取下一个生成器切出状态（第一次执行时为第一个切出状态）对象，包含了当前生成器的运行状态和返回的值。</p>
+<p>生成器执行对象直到遇到最后一个yield语句或第一个return语句便终止。</p>
+<p>③运行生成器内容</p>
+<p>生成器对象自身也是一种可迭代对象，所以直接使用for-of循环。</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/49554775-6737e000-f938-11e8-9343-36c82e840eda.PNG" alt="6"></p>
+<h2 id="4-生成器嵌套"><a href="#4-生成器嵌套" class="headerlink" title="4.生成器嵌套"></a>4.生成器嵌套</h2><p>一个生成器嵌套在另一个生成器中。</p>
+<p>yield*语句：将一个生成器对象嵌套在另一个生成器中，并将其展开。</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/49554781-6901a380-f938-11e8-9b82-f4b4fa136e84.PNG" alt="7"></p>
+<p>附代码地址：<a href="https://github.com/JoseyDon/ES6-demo" target="_blank" rel="external">https://github.com/JoseyDon/ES6-demo</a></p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2018-12-05T13:21:18.311Z" itemprop="datePublished">2018-12-05</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【ES6】ES6的重要的13种新特性之生成器" data-title="【ES6】ES6的重要的13种新特性之生成器" data-url="http://yoursite.com/2018/12/05/【ES6】ES6的重要的13种新特性之生成器/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
 
   
 </div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
 
 
 

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>【ES6】ES6的重要的13种新特性之let、const、块级作用域 | ♥毛球Josey♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球Josey♥的博客">
+	<img src="/favicon.png" alt="♥毛球Josey♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/11/%E3%80%90css%E3%80%91css%E4%B8%AD%E4%BD%BF%E7%94%A8em/" target="_blank">【css】css中使用em</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JaveScript%E3%80%91JavaScript%E5%85%A5%E9%97%A8%E7%AF%87/" target="_blank">【JaveScript】JavaScript入门篇</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JavaScript%E3%80%91%E4%BA%8B%E4%BB%B6/" target="_blank">【JavaScript】事件</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/02/22/%E3%80%90JavaScript%E3%80%91JavaScript%E5%AE%9E%E4%BE%8B/" target="_blank">【JavaScript】JavaScript实例</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90javascript%E3%80%91%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" target="_blank">【javascript】用javascript实现动画效果</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90Javascript%E3%80%91CSS-DOM/" target="_blank">【javascript】CSS-DOM</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91%E8%BD%AE%E6%92%AD%E5%9B%BE%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" target="_blank">【Javascript】轮播图实现原理</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91UI%E7%BB%84%E4%BB%B6%E4%B9%8B%E6%8E%92%E5%BA%8F%E8%A1%A8%E6%A0%BC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">【Javascript】UI组件之排序表格学习笔记</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【ES6】ES6的重要的13种新特性之let、const、块级作用域
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>在正式学习ES6之前，我先到知乎上去搜索了一些学习方法。在选择相关书籍的时候，看到有知乎用户对比《深入理解ES6》、阮一峰老师的《ES6标准入门》和小问的《实战ES2015》这三本书，该用户得出的结论是：</p>
+<p>1、《深入理解ES6》最大的特点是从浅到深。从为什么引入这个特性开始，一步一步地深入展开讲解。但有时就是由于过分的深入浅出，有头重脚轻的感觉。大篇幅的展开讲引入的原因，到如何使用特性时，反而不是很详细，或者说不是很系统。</p>
+<p>总结一下，就是”为什么”的部分讲得深，”是什么”的部分讲得浅</p>
+<p>2、《ES6标准入门》这本书继承了阮一峰老师一贯的风格，“猪肚”的部分夯地非常实，把一个特性的各种参数，各种使用场景，各种注意事项都讲得很清楚。比如，该特性有N个属性，M个方法。接下来，就开始系统地讲解这N个属性M个方法，所以，每部分的篇幅都很长</p>
+<p>缺点是“为什么”的部分讲的相对少，有的甚至只有一句话。于是，学起来可能就有一种似懂非懂的感觉</p>
+<p>3、《实战ES2015》这本书主要讲的是一些重点特性和偏实战的内容。适合全面学完ES6基础知识以后，在实战之前好好阅读。类比于高考的二轮重点复习吧</p>
+<p>本人抱着一种强烈的好奇心和求真欲，想以自己的亲身经历来检验这种说法是否靠谱，趁着双十一购入了这三本书籍，决定一边学习一边比对这三本书的优缺点。以下是本人的学习笔记，为了方便比对，注明了每个知识点的来源。</p>
+<p>《深入理解ES6》</p>
+<p>《ES6标准入门》</p>
+<p>《实战ES2015》</p>
+<h2 id="一、ECMAScript"><a href="#一、ECMAScript" class="headerlink" title="一、ECMAScript"></a>一、ECMAScript</h2><h3 id="1-ECMAScript是什么？和与JavaScript有什么关系？"><a href="#1-ECMAScript是什么？和与JavaScript有什么关系？" class="headerlink" title="1.ECMAScript是什么？和与JavaScript有什么关系？"></a>1.ECMAScript是什么？和与JavaScript有什么关系？</h3><p>Web浏览器或JavaScript运行环境只是根据<strong>ECMAscript规范</strong>实现了一套<strong>JavaScript运行引擎</strong>，使其成为JavaScript作为脚本语言运行的宿主环境。而ECMAScript是对实现<strong>ECMA标准</strong>的<strong>语言描述</strong>。所以，实际上ECMAScript与web浏览器并不存在相互依赖的关系。如今，ECMAScript已经超越了web浏览器脚本这一角色，成为了一种真正的通用语言标准。（《实战ES2015》）</p>
+<p>ECMAScript是JavaScript的<strong>规格</strong>，JavaScript是ECMAScript的一种<strong>实现</strong>，除此以外还有其他实现。（《ES6标准入门》、《实战ES2015》）</p>
+<h3 id="2-ES6和ECMAScript2015的关系"><a href="#2-ES6和ECMAScript2015的关系" class="headerlink" title="2.ES6和ECMAScript2015的关系"></a>2.ES6和ECMAScript2015的关系</h3><p>ES6是5.1版本以后的JavaScript的下一代标准，涵盖了ES2015、ES2016、ES2017等，而ES2015是正式名称，特指当年发布的正式版本的语言标准。（《ES6标准入门》）</p>
+<h3 id="3-ECMAScript的历史更替"><a href="#3-ECMAScript的历史更替" class="headerlink" title="3.ECMAScript的历史更替"></a>3.ECMAScript的历史更替</h3><p>《ES6标准入门》、《实战ES2015》</p>
+<h3 id="4-在浏览器中使用ES6"><a href="#4-在浏览器中使用ES6" class="headerlink" title="4.在浏览器中使用ES6"></a>4.在浏览器中使用ES6</h3><p>由于现有浏览器对ES6语法的支持程度不同，很可能会产生报错，所以在浏览器中使用ES6需要将ES6代码转换成ES5代码 。</p>
+<p>主要用babel转码器、引入实时转码文件、在线转换这三种方式。</p>
+<p>（《ES6标准入门》）</p>
+<h3 id="5-ES2015能为实际开发带来什么？"><a href="#5-ES2015能为实际开发带来什么？" class="headerlink" title="5.ES2015能为实际开发带来什么？"></a>5.ES2015能为实际开发带来什么？</h3><h4 id="语法糖"><a href="#语法糖" class="headerlink" title="语法糖"></a>语法糖</h4><p><strong>语法糖是指添加某种语法，对语言的功能没有影响，但更方便程序员使用。</strong>例如c语言中的a[i]是*(a+i)的语法糖。ES2015中的箭头函数就是使用self、that之类变量（以便在下一层作用域内也能获得当前作用域上下文对象）的语法糖。</p>
+<h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4><p>NPM是JavaScript世界中最为流行的<strong>JavaScript模块管理平台</strong>。</p>
+<p>ES2015原生的模块化机制中的<strong>模块内容选择性引入</strong>为JavaScript工程化提供更多的想象空间。</p>
+<p>webpack可以利用ES2015中的模块化机制最大程度<strong>精简J</strong>avaScript应用的体积。</p>
+<h4 id="组件化"><a href="#组件化" class="headerlink" title="组件化"></a>组件化</h4><p>组件化开发是模块化开发的<strong>高级体现</strong>。</p>
+<p>let</p>
+<p>组件化开发所重视的是组件之间的<strong>非耦合关系</strong>和组件的<strong>可重用性</strong>，而组件之间也可以存在依赖性。同一类内容块可以抽象化为一个组件，并在生产中<strong>重复使用</strong>。</p>
+<p>虚拟滚动视图 ：在一个长列表视图中，用户的可见范围是有限的，而内容长度却可以无限增长，内容元素过多会导致性能低下问题。虚拟滚动视图通过利用尽可能少的<strong>内容组件</strong>来展示处在<strong>可视范围</strong>内的内容元素，并且在用户进行<strong>滑动操作</strong>时不断计算偏差而<strong>重复使用</strong>已存在的元素。</p>
+<p>Vue.js和React这两款JavaScript框架中模块化和组件化都有很好的体现。</p>
+<h4 id="内存安全"><a href="#内存安全" class="headerlink" title="内存安全"></a>内存安全</h4><p>const为ECMAScript带来定义常量的能力，可以实现变量名与内存地址的强绑定，让变量不会因为除了定义语句和删除语句外的代码丢失内存地址的绑定。</p>
+<p>let为ECMAscript修复了var因为代码习惯不佳而导致的代码作用域混乱等问题，同时实现了块状作用域。</p>
+<p>《实战ES2015》</p>
+<h2 id="二、let-const和块级作用域"><a href="#二、let-const和块级作用域" class="headerlink" title="二、let const和块级作用域"></a>二、let const和块级作用域</h2><p>《实战ES2015》中先介绍了ES2015之前没有<strong>块级作用域</strong>，引入了由于没有块级作用域<strong>循环绑定事件</strong>时出现的问题。然后引入<strong>let代替var定义变量</strong>，通过对比let和var的不同点引入了<strong>重定义检查</strong>和<strong>可被用于块级作用域</strong>。随后介绍了<strong>const定义常量</strong>，通过对比<strong>变量和内存的关系</strong>深入介绍了<strong>const的实现原理</strong>，再引入因原理导致<strong>对象的值可变</strong>，同时讲解<strong>如何获得值不可变的对象</strong>。再介绍了const也会产生<strong>块级作用域</strong>。通过回顾ES2015之前的<strong>变量生命周期</strong>来介绍ES2015已经<strong>更正</strong>了这种逻辑错误。为了得到更佳体验，总结了使用ES2015时遵从的<strong>三条原则</strong>；同时由于块级作用域的存在，引入<strong>for-of循环</strong>，同时介绍了配合ES2015中的解构特性和数组方法entries的使用。</p>
+<p>ES2015前只有全局作用于和函数作用域。</p>
+<p>循环绑定事件中，使用var定义的计数器i会存在于for循环的上一层作用域中，触发的响应函数中对计数器i的引用获得的值都会是一样的。</p>
+<p>let的重定义检查：当一个变量名在同一个作用域内被定义第二次时，便会抛出错误。</p>
+<p>let可被用于块级作用域：在循环绑定事件中，循环体的每次执行都会产生一个作用域，让每次循环体的执行都能保存当前计数器的数值和引用。</p>
+<p>变量和内存的关系：变量名 通过 内存绑定 绑定内存地址。其中内存绑定可变。</p>
+<p>const定义常量的原理：在变量名和内存地址之间建立不可变的绑定。</p>
+<p>对象的值可变：对象是由若干内存空间片段组成的值。对象内存地址不变，但是仍可修改对象属性。</p>
+<p>值不可变的对象：配合Object.freeze()方法。</p>
+<p>const块级作用域：遵循变量在作用域中的生命周期。</p>
+<p>变量的生命周期：由作用域和对其的引用决定。</p>
+<p>ES2015更正逻辑错误：不允许变量或常量在被定义前被其他语句所读取。</p>
+<p>三条原则：1.使用const来定义常量。2.使用let来定义变量。3.不再使用var。</p>
+<p>for-of循环：</p>
+<p><img src="https://user-images.githubusercontent.com/22424758/49346972-7f0f2a00-f6d4-11e8-9f9b-fff413675a37.png" alt="1"></p>
+<p>《ES6标准入门》先介绍<strong>let的基本用法</strong>，指出let更适合<strong>在for循环在应用</strong>。再由var会发生变量提升指出<strong>let不存在变量提升</strong>，并且存在<strong>暂时性死区</strong>和<strong>不可重复声明</strong>。之后由变量提升和for循环i泄露成全局变量指出块级作用域的必要性来介绍ES6的<strong>块级作用域</strong>，同时指出<strong>立即匿名函数不再必要</strong>；同时介绍了<strong>在块级作用域中的函数声明</strong>。因为<strong>块级作用域没有返回值</strong>引入<strong>do表达式</strong>。再介绍<strong>const的基本用法</strong>，介绍了<strong>const的本质</strong>，介绍了<strong>ES6声明变量的6种方法</strong>。最后介绍了<strong>顶层对象的属性</strong>和<strong>global对象</strong>。</p>
+<p>let不存在变量提升：let所声明的变量一定要在声明后使用。</p>
+<p>暂时性死区：如果块级作用域中存在let和const命令，则这个块级作用域对这些命令声明的变量从一开始就形成封闭作用域，只要在声明前使用这些变量就会报错。typeof不再百分之百安全。</p>
+<p>在块级作用域中的函数声明：在浏览器的ES6环境下，块级作用域内声明函数的行为类似var声明变量。</p>
+<p>do表达式：使得块级作用域可以变为表达式，拥有返回值。</p>
+<p>const的基本用法：const一旦声明常量，必须立即初始化。不能留到以后赋值。</p>
+<p>ES6声明变量的6种方法：var、function、let、const、import、class。</p>
+<p>顶层对象的属性：顶层对象在浏览器环境指的是window对象；在node环境中指的global对象；ES5中顶层对象的属性等价于全局变量；ES6中var和function声明的全局变量依旧是顶层对象的属性；let、const和class声明的全局变量不属于顶层对象的属性。</p>
+<p>《深入理解ES6》与《ES6标准入门》内容接近。只是在先后顺序中略有差异。</p>
+<p>通过第一章对比本人得出的结论是《ES6标准入门》更加完备和全面，《深入理解ES6》出彩的地方不大，而《实战ES2015》非常简练，把最重要和常见的新特性交代的非常清楚，本人由于时间和精力限制，后面的学习将主要围绕《实战ES2015》展开。</p>
+<p>附代码地址：<a href="https://github.com/JoseyDon/ES6-demo" target="_blank" rel="external">https://github.com/JoseyDon/ES6-demo</a></p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2018-11-29T00:57:21.917Z" itemprop="datePublished">2018-11-29</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【ES6】ES6的重要的13种新特性之let、const、块级作用域" data-title="【ES6】ES6的重要的13种新特性之let、const、块级作用域" data-url="http://yoursite.com/2018/11/29/【ES6】ES6的重要的13种新特性之let、const、块级作用域/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://s1.ax1x.com/2018/11/27/FVZTmD.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球Josey♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>

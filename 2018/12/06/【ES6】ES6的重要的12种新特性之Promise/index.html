@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>【ES6】ES6的重要的13种新特性之Promise | ♥毛球Josey♥的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+      <link rel="icon" href="/favicon.png">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/js/google-code-prettify/tomorrow-night-eighties.min.css">
+
+  </head>
+
+  <body>
+
+<header>
+	<a id="logo" href="/" title="♥毛球Josey♥的博客">
+	<img src="/favicon.png" alt="♥毛球Josey♥的博客"></a>
+	
+	
+		<!--搜索栏-->
+		<i class="js-toggle-search iconfont icon-search"></i>
+
+
+<form class="js-search search-form search-form--modal" method="get" action="http://gushi.li" role="search">
+	<div class="search-form__inner">
+		<div>
+			<i class="iconfont icon-search"></i>
+			<input class="text-input" placeholder="Enter Key..." type="search">
+		</div>
+	</div>
+</form>
+	
+
+	
+		<!--侧边导航栏-->
+		<a id="nav-toggle" href="#"><span></span></a>
+
+<nav>
+	<div class="menu-top-container">
+		<ul id="menu-top" class="menu">
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/11/18/【CSS】html中引入css的三种表现形式/" target="_blank">【CSS】html中引入css的三种形式</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/11/%E3%80%90css%E3%80%91css%E4%B8%AD%E4%BD%BF%E7%94%A8em/" target="_blank">【css】css中使用em</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JaveScript%E3%80%91JavaScript%E5%85%A5%E9%97%A8%E7%AF%87/" target="_blank">【JaveScript】JavaScript入门篇</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2016/12/12/%E3%80%90JavaScript%E3%80%91%E4%BA%8B%E4%BB%B6/" target="_blank">【JavaScript】事件</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/02/22/%E3%80%90JavaScript%E3%80%91JavaScript%E5%AE%9E%E4%BE%8B/" target="_blank">【JavaScript】JavaScript实例</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90javascript%E3%80%91%E7%94%A8javascript%E5%AE%9E%E7%8E%B0%E5%8A%A8%E7%94%BB%E6%95%88%E6%9E%9C/" target="_blank">【javascript】用javascript实现动画效果</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/12/%E3%80%90Javascript%E3%80%91CSS-DOM/" target="_blank">【javascript】CSS-DOM</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91%E8%BD%AE%E6%92%AD%E5%9B%BE%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/" target="_blank">【Javascript】轮播图实现原理</a>
+				</li>
+			
+				
+				<li class="current-menu-item">
+					<a href="https://joseydon.github.io/2017/03/27/%E3%80%90Javascript%E3%80%91UI%E7%BB%84%E4%BB%B6%E4%B9%8B%E6%8E%92%E5%BA%8F%E8%A1%A8%E6%A0%BC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_blank">【Javascript】UI组件之排序表格学习笔记</a>
+				</li>
+			
+		</ul>
+	</div>
+</nav>
+	
+
+</header>
+<div class="m-header ">
+	<section id="hero1" class="hero">
+		<div class="inner">
+		</div>
+	</section>
+	
+		<figure class="top-image" data-enable=true></figure>
+	
+</div>
+
+<!--文章列表-->
+<div class="wrapper">
+  
+    <!--文章-->
+<article>
+	
+  
+    <h1 class="post-title" itemprop="name">
+      【ES6】ES6的重要的13种新特性之Promise
+    </h1>
+  
+
+	<div class='post-body mb'>
+		<p>promise最大的目的在于可以让异步代码变得井然有序。</p>
+<p>在JavaScript的实际开发中需要使用到很多的异步开发。如浏览器中的动画效果、服务器或桌面端的IO操作。</p>
+<p>ES2015之前，为了实现动画效果的顺序展示，需要把这些动画效果的方法通过回调函数“串”起来。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">animate1(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">  animate2(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">    animate3(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">      animate4(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">        <span class="comment">//...</span></div><div class="line">      &#125;)</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>Promise在设计上具有原子性：等待、成功、失败。</p>
+<h3 id="1-创建Promise对象"><a href="#1-创建Promise对象" class="headerlink" title="1.创建Promise对象"></a>1.创建Promise对象</h3><p>创建一个Promise对象，并将其作为函数值返回。</p>
+<p>Promise构造函数要求传入一个函数，并带有resolve和reject参数，这两个参数用于结束Promise等待的函数，对应成功和失败。</p>
+<p>将新创建的Promise对象作为异步方法的返回值，所有的状态就可以使用它所提供的方法进行控制。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">asyncMethod</span>(<span class="params">...agrs</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(resolve,reject) =&gt; &#123;</div><div class="line">    <span class="comment">//...</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-进行异步操作"><a href="#2-进行异步操作" class="headerlink" title="2.进行异步操作"></a>2.进行异步操作</h3><p>通过resolve(value)和reject(reason)方法控制Promise的原子状态。</p>
+<p>resolve(value)：控制当前Promise对象是否进入成功状态，一旦执行该方法有且只有一个返回值，Promise对象会从等待状态进入成功状态且不再改变状态。</p>
+<p>reject(reason)：控制当前Promise对象是否进入失败状态，一旦进入失败状态就不再改变。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</div><div class="line">  api.call(<span class="string">'fetch-data'</span>,(err,data) =&gt; &#123;</div><div class="line">    <span class="keyword">if</span>(err) <span class="keyword">return</span> reject(err)</div><div class="line">    resolve(data);</div><div class="line">  &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>当在Promise对象的首层函数作用域中一旦出现throw语句，Promise对象便会直接进入失败状态，且以throw语句的抛出值作为错误值进行错误处理。</p>
+<p>return值使Promise停留在等待状态。</p>
+<h3 id="3-处理Promise的状态"><a href="#3-处理Promise的状态" class="headerlink" title="3.处理Promise的状态"></a>3.处理Promise的状态</h3><p>promise.then(onFulfilled,[onRejected])处理Promise对象的成功状态并接收返回值。</p>
+<p>promise.catch(onRejected)处理Promise对象的失败状态并处理失败的原因</p>
+<p>这两个方法都会返回一个Promise对象，Promise对象会组合成一个呈流水线的Promise对象链</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">asyncMethod()</div><div class="line">	.then(<span class="function">(<span class="params">...args</span>) =&gt;</span> args <span class="comment">/*...*/</span>)</div><div class="line">	.catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.error(err))</div></pre></td></tr></table></figure>
+<p>如果onFulfilled/onRejected中所返回的值是一个Promise对象，该对象会被加入到Promise的处理链中。</p>
+<p>如果onFulfilled/onRejected中所返回的值不是一个Promise对象，则会返回一个已经进入成功状态的Promise对象。</p>
+<p>如果onFulfilled/onRejected中因throw语句抛出一个错误err，则会返回一个已经进入失败状态的Promise对象。</p>
+<p>只有当Promise对象链中的上一个Promise对象进入成功或失败阶段，下一个Promise对象才会被激活。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">animate1()</div><div class="line">	.then(<span class="function"><span class="params">()</span> =&gt;</span> animate2())</div><div class="line">	.then(<span class="function"><span class="params">()</span> =&gt;</span> animate3())</div><div class="line">	.then(<span class="function"><span class="params">()</span> =&gt;</span> animate4())</div><div class="line">	.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      <span class="comment">//...</span></div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<p>Promise对象的状态是具有传递性的。</p>
+<h3 id="4-高级使用方法"><a href="#4-高级使用方法" class="headerlink" title="4.高级使用方法"></a>4.高级使用方法</h3><p>①Promise.all(iterable)</p>
+<p>该方法可传入一个可迭代对象（如数组）并返回一个Promise对象，该Promise对象会在可迭代对象中所有的Promise对象全部进入完成状态（成功或失败）后被激活。</p>
+<p>如果可迭代对象中的所有Promise对象都进入了成功状态，那么该方法返回的Promise对象也会进入成功状态，并以一个可迭代对象来承载其中的所有返回值。</p>
+<p>如果可迭代对象中Promise对象的其中一个进入了失败状态，那么该方法返回的Promise对象也会进入失败状态。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> promises = [<span class="keyword">async</span>(<span class="number">1</span>),<span class="keyword">async</span>(<span class="number">2</span>),<span class="keyword">async</span>(<span class="number">3</span>),<span class="keyword">async</span>(<span class="number">4</span>)];</div><div class="line"></div><div class="line"><span class="built_in">Promise</span>.all(promises)</div><div class="line">	.then(<span class="function"><span class="params">values</span> =&gt;</span> &#123;</div><div class="line">      <span class="comment">//...</span></div><div class="line">	&#125;)</div><div class="line">	.catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.error(err));</div></pre></td></tr></table></figure>
+<p>②Promise.race(iterable)</p>
+<p>该方法接收包含一个或多个Promise对象的可迭代对象，并监听所有的Promise对象，并等待第一个进入完成状态的Promise对象。这个方法返回的Promise对象以第一个完成的Promise对象的状态为准。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> promises = [<span class="keyword">async</span>(<span class="number">1</span>),<span class="keyword">async</span>(<span class="number">2</span>),<span class="keyword">async</span>(<span class="number">3</span>),<span class="keyword">async</span>(<span class="number">4</span>)];</div><div class="line"></div><div class="line"><span class="built_in">Promise</span>.arace(promises)</div><div class="line">	.then(<span class="function"><span class="params">values</span> =&gt;</span> &#123;</div><div class="line">      <span class="comment">//...</span></div><div class="line">	&#125;)</div><div class="line">	.catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.error(err));</div></pre></td></tr></table></figure>
+<p>附代码地址：<a href="https://github.com/JoseyDon/ES6-demo" target="_blank" rel="external">https://github.com/JoseyDon/ES6-demo</a></p>
+
+	</div>
+	<div class="meta split">
+		<time class="post-date" datetime="2018-12-06T06:44:36.948Z" itemprop="datePublished">2018-12-06</time>
+	</div>
+</article>
+
+<!--评论-->
+
+	
+<div class="ds-thread" data-thread-key="【ES6】ES6的重要的12种新特性之Promise" data-title="【ES6】ES6的重要的13种新特性之Promise" data-url="http://yoursite.com/2018/12/06/【ES6】ES6的重要的12种新特性之Promise/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joseydon"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0]
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+</script>
+
+
+  
+</div>
+
+
+  <svg id="bigTriangleColor" width="100%" height="40" viewBox="0 0 100 102" preserveAspectRatio="none">
+    <path d="M0 0 L50 100 L100 0 Z"></path>
+  </svg>
+
+  
+
+
+  <div class="wrapper"></div>
+
+
+
+
+
+<div class="fat-footer">
+	<div class="wrapper">
+		<div class="layout layout--center">
+			<div class="layout__item palm-mb">
+				<div class="media">
+					<img class="headimg" src='https://s1.ax1x.com/2018/11/27/FVZTmD.jpg' alt='JoseyDon'>
+					<div class="media__body">
+						<h4>♥毛球Josey♥的博客</h4>
+						<p class='site-description'>❀因为在跑，所以耳边有风。❀</p>
+					</div>
+				</div>
+				<div class="author-contact">
+					<ul>
+						
+							
+							<li>
+				        		<a href="http://weibo.com/01josey" target="_blank">
+				        			
+				        				<i class="iconfont icon-weibo"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://github.com/joseydon" target="_blank">
+				        			
+				        				<i class="iconfont icon-github"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+							
+							<li>
+				        		<a href="https://www.zhihu.com/people/mao-mao-mao-95-59" target="_blank">
+				        			
+										<i class="iconfont icon-zhihu"></i>
+				        			
+				        		</a>
+				        	</li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer class="footer" role="contentinfo">
+	<div class="wrapper wrapper--wide split split--responsive">
+		<span>Theme by <a href="http://github.com/yumemor">Yumemor</a>. Powered by <a href="http://hexo.io">Hexo</a></span>
+	</div>
+</footer>
+
+	<!-－这里导入了 lib.js 里面涵盖了 jQuery 等框架 所以注释掉-->
+	<!--<script src="http://lib.sinaapp.com/js/jquery/2.0/jquery.min.js"></script>-->
+	<script src="/js/lib.js"></script>
+	<script src="/js/google-code-prettify/prettify.js"></script>
+	<script src="/js/module.js"></script>
+	<script src="/js/script.js"></script>
+	<script type='text/javascript'>
+		//代码高亮
+		$(document).ready(function(){
+	 		$('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   			prettyPrint();
+		});
+	</script>
+	</body>
+</html>
